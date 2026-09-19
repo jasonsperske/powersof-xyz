@@ -12,8 +12,8 @@ export default function Home({
       <main className="shell">
         <div className="page-heading">
           <div>
-            <p className="eyebrow">YOUR MATHEMATICS</p>
-            <h1>A little further, a little deeper.</h1>
+            <p className="eyebrow">MATHEMATICS COURSES</p>
+            <h1>Algebra and statistics</h1>
           </div>
           <span className="edition">01 / FOUNDATIONS</span>
         </div>
@@ -23,14 +23,14 @@ export default function Home({
             <div className="feature-copy">
               <p className="eyebrow">START LEARNING · FOUNDATIONS</p>
               <h2>
-                Make sense of numbers.
+                Numbers, equations,
                 <br />
-                Then make them work for you.
+                and functions
               </h2>
               <p>
-                From fractions to functions, build understanding.
+                Calculate with fractions and signed numbers.
                 <br />
-                One idea, worked through carefully, at a time.
+                Solve equations and interpret linear relationships.
               </p>
               <a
                 className="button lime"
@@ -44,17 +44,17 @@ export default function Home({
                 <ArrowRight size={18} />
               </a>
               <div className="feature-meta">
-                Pre-algebra → Algebra I <span>Learn at your own pace</span>
+                Pre-algebra → Algebra I <span>Lessons and assessments</span>
               </div>
             </div>
           </section>
           <section className="start-card">
             <BookOpen size={24} />
-            <p className="eyebrow">FIND YOUR STARTING POINT</p>
-            <h2>What do you already know?</h2>
+            <p className="eyebrow">PREREQUISITE CHECK</p>
+            <h2>Check arithmetic skills</h2>
             <p>
-              A short, ungraded diagnostic checks the foundations. No pressure,
-              just a useful place to begin.
+              Six ungraded questions on signed numbers, fractions, powers,
+              percentages, and unit rates.
             </p>
             <a href="#/activity/pre-diagnostic" className="text-link">
               Take the diagnostic <ArrowUpRight size={19} />
@@ -63,9 +63,9 @@ export default function Home({
         </div>
         <section className="section">
           <div className="section-heading">
-            <h2>Your learning path</h2>
+            <h2>Courses</h2>
             <a href="#/explore">
-              Explore the map <ArrowUpRight size={17} />
+              View prerequisites <ArrowUpRight size={17} />
             </a>
           </div>
           <div className="path-strip">
@@ -77,12 +77,12 @@ export default function Home({
               },
               {
                 title: 'Algebra I',
-                status: 'First principles available',
+                status: 'Equations, inequalities, functions',
                 url: 'algebra-1',
               },
               {
                 title: 'Statistics',
-                status: 'Week 1 ready to explore',
+                status: 'Mean, variance, z-scores',
                 url: 'statistics',
               },
               { title: 'Calculus', status: 'Planned course', url: null },
@@ -104,10 +104,11 @@ export default function Home({
         <section className="quiet-banner">
           <Network />
           <div>
-            <h3>Mathematics connects.</h3>
+            <h3>Prerequisite concepts</h3>
             <p>
-              Your understanding of each concept will travel with you from one
-              course to the next.
+              Fractions support ratios and percentages. Equations and ratios
+              support linear functions. Algebra supports statistical
+              calculations.
             </p>
           </div>
           <a href="#/explore" aria-label="Explore mathematics">

@@ -44,12 +44,13 @@ export const algebraConcepts = [
 export const algebraLessons: Lesson[] = [
   {
     id: 'pre-integers',
-    title: 'Numbers have direction',
+    objectives: ["Signed numbers specify positions relative to zero; absolute value measures distance from zero.", "Subtracting a number is equivalent to adding its opposite.", "Parentheses and operation precedence determine which calculations to perform first."],
+    title: 'Signed numbers and order of operations',
     minutes: 30,
     concepts: ['algebra.signed-numbers'],
     sections: [
       {
-        title: 'Locate before you calculate',
+        title: 'Number line, order, and absolute value',
         text: 'Positive and negative numbers describe positions relative to a chosen zero. On a number line, numbers increase to the right. Absolute value measures distance from zero, so it is nonnegative. The opposite of a number reverses its direction; it does not necessarily make the number negative.',
         math: String.raw`|-5|=5,\qquad -(-5)=5`,
         example:
@@ -79,12 +80,13 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'pre-fractions',
-    title: 'Fractions are numbers, not two integers',
+    objectives: ["Equivalent fractions name the same value when numerator and denominator are scaled by the same nonzero factor.", "Adding or subtracting fractions requires a common denominator.", "Dividing by a nonzero fraction is equivalent to multiplying by its reciprocal."],
+    title: 'Equivalent fractions and fraction operations',
     minutes: 35,
     concepts: ['algebra.fractions'],
     sections: [
       {
-        title: 'Keep the size of the whole fixed',
+        title: 'Fractions and the reference whole',
         text: 'A fraction a/b is a divided by b, with b nonzero. The denominator describes the size of each equal part; the numerator counts those parts. Multiplying numerator and denominator by the same nonzero number changes the name, not the value.',
         math: String.raw`\frac{3}{4}=\frac{3\cdot2}{4\cdot2}=\frac{6}{8}`,
         example:
@@ -108,6 +110,7 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'pre-powers',
+    objectives: ["Positive integer exponents count repeated factors; product and power rules follow from counting those factors.", "For a nonzero base, exponent zero gives 1 and a negative exponent gives a reciprocal.", "The square-root symbol gives the nonnegative root; x² = a can have two real solutions when a > 0."],
     title: 'Powers, roots & repeated multiplication',
     minutes: 30,
     concepts: ['algebra.fractions', 'algebra.signed-numbers'],
@@ -120,14 +123,14 @@ export const algebraLessons: Lesson[] = [
           '2³ · 2² = (2·2·2)(2·2) = 2⁵ = 32. By contrast, 2³ + 2² = 8 + 4 = 12; the product rule does not apply to addition.',
       },
       {
-        title: 'Extend the pattern carefully',
+        title: 'Zero and negative exponents',
         text: 'For a nonzero base, reducing the exponent by one divides the value by the base. This gives a⁰ = 1 and a negative exponent as a reciprocal. A negative exponent does not mean a negative answer.',
         math: String.raw`a^0=1,\qquad a^{-n}=\frac{1}{a^n}\quad(a\ne0)`,
         example:
           '10² = 100, 10¹ = 10, 10⁰ = 1, and 10⁻² = 0.01. Scientific notation 3.2 × 10⁴ means 32,000. We do not apply these reciprocal rules to a base of zero.',
       },
       {
-        title: 'A root reverses a power with a convention',
+        title: 'Principal square roots and quadratic equations',
         text: 'The square-root symbol denotes the nonnegative root. Solving an equation is a different task: both 5 and −5 solve x² = 25. Because square roots return nonnegative values, √(x²) = |x| for real x.',
         math: String.raw`\sqrt{25}=5,\qquad x^2=25\Longrightarrow x=5\text{ or }x=-5`,
         example:
@@ -137,7 +140,8 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'pre-ratios',
-    title: 'Compare by multiplication',
+    objectives: ["Equivalent ratios scale both quantities by the same factor.", "A proportional relationship has a constant unit rate and zero output at zero input.", "Percentage change is relative to a specified base and can be represented by a multiplier."],
+    title: 'Ratios, rates, and percentages',
     minutes: 35,
     concepts: ['algebra.ratios', 'algebra.fractions'],
     sections: [
@@ -166,7 +170,8 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'alg-expressions',
-    title: 'Use symbols to describe structure',
+    objectives: ["Substitution evaluates an expression; an equation asserts equality between expressions.", "Like terms have the same variable part and combine by adding their coefficients.", "Distribution and factoring preserve the value of an expression for every allowed input."],
+    title: 'Expressions, substitution, and equivalence',
     minutes: 35,
     concepts: ['algebra.expressions', 'algebra.signed-numbers'],
     sections: [
@@ -195,7 +200,8 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'alg-equations',
-    title: 'Keep an equation in balance',
+    objectives: ["A solution is an allowed value that makes an equation true.", "Reversible operations on both sides preserve the solution set.", "A linear equation may have one solution, no solutions, or every real number as a solution."],
+    title: 'Equivalent equations and solutions',
     minutes: 40,
     concepts: ['algebra.equations', 'algebra.expressions'],
     sections: [
@@ -207,7 +213,7 @@ export const algebraLessons: Lesson[] = [
           'Check by substitution: 3(5) + 7 = 22. “Move 7 and change its sign” is shorthand for subtracting 7 from both sides; the balanced operation is the reason it works.',
       },
       {
-        title: 'Undo structure, not just symbols',
+        title: 'Solving linear equations',
         text: 'Distribute and collect like terms when needed. Then collect variable terms on one side and constants on the other. With fractions, multiplying every term on both sides by a common nonzero denominator can simplify the arithmetic.',
         math: String.raw`2(x-3)=x+5\Longleftrightarrow2x-6=x+5\Longleftrightarrow x=11`,
         example:
@@ -229,12 +235,13 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'alg-inequalities',
-    title: 'Describe a whole set of answers',
+    objectives: ["An inequality describes a set of values; strict inequalities exclude the boundary.", "Multiplying or dividing both sides by a negative number reverses the inequality.", "A solution must also satisfy restrictions from the situation, such as nonnegative integer counts."],
+    title: 'Inequalities and solution sets',
     minutes: 30,
     concepts: ['algebra.inequalities', 'algebra.equations'],
     sections: [
       {
-        title: 'A boundary and a direction',
+        title: 'Strict and inclusive inequalities',
         text: 'An inequality describes a set of values. The symbols < and > exclude the boundary; ≤ and ≥ include it. On a number line, use an open endpoint for a strict inequality and a closed endpoint for an included boundary.',
         math: String.raw`x<3\quad\text{means every real value less than }3`,
         example:
@@ -257,7 +264,8 @@ export const algebraLessons: Lesson[] = [
   },
   {
     id: 'alg-functions',
-    title: 'From inputs to linear relationships',
+    objectives: ["A function assigns exactly one output to each input in its domain.", "Slope is change in output divided by change in input; the intercept is the output at input zero.", "A linear relationship is proportional exactly when its intercept is zero."],
+    title: 'Functions, slope, and intercept',
     minutes: 40,
     concepts: ['algebra.functions', 'algebra.equations', 'algebra.ratios'],
     sections: [
@@ -366,7 +374,7 @@ const I = 'algebra.signed-numbers',
   N = 'algebra.inequalities',
   U = 'algebra.functions';
 export const algebraActivities: Activity[] = [
-  a('pre-diagnostic', 'Pre-algebra · Starting point', 'diagnostic', [
+  a('pre-diagnostic', 'Pre-algebra · Prerequisite diagnostic', 'diagnostic', [
     n(
       'pd1',
       'Evaluate −3 + 8.',
@@ -571,7 +579,7 @@ export const algebraActivities: Activity[] = [
       'The principal square root is 5. The equation has solutions ±5, and √(9+16)=5.',
     ),
   ]),
-  a('alg-diagnostic', 'Algebra I · Starting point', 'diagnostic', [
+  a('alg-diagnostic', 'Algebra I · Prerequisite diagnostic', 'diagnostic', [
     n('ad1', 'Evaluate −6 + 10.', 4, I, 'Move 10 units right from −6.'),
     n('ad2', 'Evaluate 3/4 − 1/2.', 0.25, F, '3/4−2/4=1/4.'),
     n('ad3', 'Evaluate 2x+3 at x=4.', 11, E, 'Substitute 4: 8+3=11.'),
@@ -771,7 +779,7 @@ export const algebraActivities: Activity[] = [
       ],
     ),
   ]),
-  a('alg-challenge', 'Algebra I · Justify and connect', 'challenge', [
+  a('alg-challenge', 'Algebra I · Equivalence and proportionality', 'challenge', [
     w(
       'ac1',
       'Prove that 2(x+3)−x and x+6 are equal for every real x. Explain why checking one value alone is insufficient.',

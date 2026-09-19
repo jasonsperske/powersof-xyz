@@ -161,7 +161,7 @@ function Course({ id, record }: { id: string; record: RecordState }) {
             </section>
           ))}
           <section className="section">
-            <h2>Explain and retrieve</h2>
+            <h2>Derivations and review</h2>
             <div className="activity-grid">
               {activities
                 .filter(
@@ -185,7 +185,7 @@ function Course({ id, record }: { id: string; record: RecordState }) {
           </section>
           {course.planned.length > 0 && (
             <section className="section">
-              <h2>What comes next</h2>
+              <h2>Planned topics</h2>
               <p className="intro">
                 These topics are planned; their lessons are not yet published.
               </p>
@@ -213,17 +213,16 @@ function Course({ id, record }: { id: string; record: RecordState }) {
         <aside>
           <div className="panel">
             <p className="eyebrow">BEFORE YOU BEGIN</p>
-            <h2>Find your starting point</h2>
+            <h2>Check prerequisites</h2>
             <p className="intro">
-              Take a short diagnostic to see which foundations need attention.
-              It is a guide, not a gate.
+              Use the diagnostic to identify prerequisite concepts that need review.
             </p>
             <a className="button" href={'#/activity/' + course.diagnosticId}>
               Take the diagnostic <ArrowRight size={17} />
             </a>
             {course.prerequisites.length > 0 && (
               <div className="section">
-                <h3>Helpful foundations</h3>
+                <h3>Prerequisite concepts</h3>
                 {course.prerequisites.map((id) => (
                   <a className="concept-link" href={'#/concept/' + id} key={id}>
                     {concepts.find((c) => c.id === id)?.title} ·{' '}
@@ -276,6 +275,17 @@ function LessonPage({
       />
       <div className="reading-layout">
         <article className="reading">
+          <section
+            className="panel core-ideas"
+            aria-labelledby="core-ideas-heading"
+          >
+            <h2 id="core-ideas-heading">Core ideas</h2>
+            <ul>
+              {lesson.objectives.map((idea) => (
+                <li key={idea}>{idea}</li>
+              ))}
+            </ul>
+          </section>
           {lesson.sections.map((s, i) => (
             <section key={s.title}>
               <span className="eyebrow">0{i + 1}</span>
@@ -334,7 +344,7 @@ function LessonPage({
           </div>
         </article>
         <aside className="panel reading-aside">
-          <p className="eyebrow">CONCEPTS YOU’RE BUILDING</p>
+          <p className="eyebrow">RELATED CONCEPTS</p>
           {lesson.concepts.map((c) => (
             <a className="concept-link" href={'#/concept/' + c} key={c}>
               {concepts.find((x) => x.id === c)?.title}
@@ -443,8 +453,8 @@ function ActivityPage({
           }
           title={
             activity.kind === 'diagnostic'
-              ? 'Your starting point is clearer.'
-              : `${savedPercent}% · Keep building.`
+              ? 'Diagnostic results recorded.'
+              : `Score: ${savedPercent}%`
           }
         />
         <div className="panel">
@@ -659,10 +669,7 @@ function Explore() {
   ];
   return (
     <main className="shell">
-      <Heading
-        label="EXPLORE MATHEMATICS"
-        title="Ideas connect. Understanding grows."
-      />
+      <Heading label="EXPLORE MATHEMATICS" title="Courses and prerequisites" />
       <p className="intro">
         Begin with Pre-algebra, continue into Algebra I, or explore Statistics
         Week 1. Your concept evidence carries across courses.
@@ -749,7 +756,10 @@ function ProgressPage({ record }: { record: RecordState }) {
   }));
   return (
     <main className="shell">
-      <Heading label="YOUR LEARNING RECORD" title="See what’s taking shape.">
+      <Heading
+        label="YOUR LEARNING RECORD"
+        title="Concept mastery and assessment results"
+      >
         <a className="button" href="#/exchange">
           Export & import <ArrowUpRight size={17} />
         </a>
@@ -811,7 +821,7 @@ function ProgressPage({ record }: { record: RecordState }) {
         </div>
         {record.attempts.length === 0 ? (
           <div className="panel">
-            <h3>Your record starts with your first attempt.</h3>
+            <h3>No assessment attempts recorded.</h3>
             <p className="intro">
               Choose a course and try its diagnostic or first worksheet.
             </p>
@@ -974,8 +984,8 @@ function Exchange({ record, update }: { record: RecordState; update: Update }) {
   return (
     <main className="shell narrow">
       <Heading
-        label="YOUR DATA, YOUR CHOICE"
-        title="Take your learning with you."
+        label="LEARNING DATA"
+        title="Export and import learning records"
       />
       <p className="intro">
         Progress lives in this browser. Download a backup to move between
@@ -989,7 +999,7 @@ function Exchange({ record, update }: { record: RecordState; update: Update }) {
         </TabsList>
         <TabsContent value="ai">
           <section className="panel">
-            <h2>A useful context for your tutor</h2>
+            <h2>Curriculum and assessment evidence</h2>
             <p className="intro">
               Download your evidence and a companion prompt, then share them
               with the tutor you choose. Review exports before sharing: answers
@@ -1047,7 +1057,7 @@ function Exchange({ record, update }: { record: RecordState; update: Update }) {
             </p>
           </section>
           <section className="panel">
-            <h2>Bring an assessment back</h2>
+            <h2>Import an external assessment</h2>
             <p className="intro">
               Import a powersof-assessment 1.0 JSON file, review the evidence,
               then choose whether to add it. External evidence never silently
@@ -1068,7 +1078,7 @@ function Exchange({ record, update }: { record: RecordState; update: Update }) {
         </TabsContent>
         <TabsContent value="backup">
           <section className="panel">
-            <h2>Keep a complete copy</h2>
+            <h2>Download a progress backup</h2>
             <p className="intro">
               Includes attempts, notes, drafts, completed guides, and accepted
               external assessments.
@@ -1204,7 +1214,7 @@ function Exchange({ record, update }: { record: RecordState; update: Update }) {
 function NotFound() {
   return (
     <main className="shell">
-      <Heading label="PAGE NOT FOUND" title="Let’s find your way back." />
+      <Heading label="PAGE NOT FOUND" title="Page not found" />
       <a className="button" href="#/">
         My learning →
       </a>
@@ -1412,7 +1422,7 @@ export default function App() {
       </div>
       <footer>
         <a href="#/exchange">Your data · Export & import</a>
-        <span>Understand it. Make it yours.</span>
+        <span>Mathematics courses</span>
       </footer>
     </>
   );

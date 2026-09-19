@@ -13,7 +13,7 @@ const landmarks = [
   { exponent: -15, name: 'The nucleus', kind: 'nucleus' },
   { exponent: -10, name: 'Atomic scale', kind: 'atom' },
   { exponent: -5, name: 'A living cell', kind: 'cell' },
-  { exponent: -2, name: 'The small things', kind: 'tissue' },
+  { exponent: -2, name: 'Centimeter scale', kind: 'tissue' },
   { exponent: 0, name: 'The human scale', kind: 'human' },
   { exponent: 3, name: 'A neighborhood', kind: 'city' },
   { exponent: 7, name: 'Our planet', kind: 'earth' },
@@ -460,7 +460,7 @@ export default function ScaleJourney() {
   }
   const credit = (
     <div className="scale-credit">
-      An illustrative journey in scale · Inspired by{' '}
+      Illustrative orders of magnitude · Inspired by{' '}
       <a
         href="https://www.eamesoffice.com/the-work/powers-of-ten/"
         target="_blank"
@@ -476,14 +476,14 @@ export default function ScaleJourney() {
         className={'scale-journey' + (nativeFull ? ' scale-expanded' : '')}
         ref={root}
         role="group"
-        aria-label="Animated journey from subatomic to cosmic scales"
+        aria-label="Animated comparison of subatomic and cosmic scales"
       >
         <Scene exponent={exponent} expanded={nativeFull} />
         <div className="scale-shade" />
         {nativeFull && (
           <div className="scale-heading">
             <span>POWERS OF SCALE</span>
-            <h2>Another zero. Another world.</h2>
+            <h2>Each power of ten changes scale by a factor of 10.</h2>
           </div>
         )}
         {controls(nativeFull)}
@@ -493,13 +493,13 @@ export default function ScaleJourney() {
         <DialogContent className="scale-dialog" showCloseButton={false}>
           <DialogTitle className="sr-only">Powers of scale</DialogTitle>
           <DialogDescription className="sr-only">
-            An illustrative SVG journey through orders of magnitude. Pause the
+            An illustrative comparison of orders of magnitude. Pause the
             animation or press Escape to return to the course.
           </DialogDescription>
           <Scene exponent={exponent} expanded />
           <div className="scale-heading">
             <span>POWERS OF SCALE</span>
-            <h2>Another zero. Another world.</h2>
+            <h2>Each power of ten changes scale by a factor of 10.</h2>
           </div>
           {controls(true)}
           {credit}

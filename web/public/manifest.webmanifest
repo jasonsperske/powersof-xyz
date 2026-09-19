@@ -2,7 +2,7 @@
   "id": "./",
   "name": "powersof.xyz",
   "short_name": "powersof.xyz",
-  "description": "Mathematics, from algebra to analysis.",
+  "description": "Algebra and statistics lessons, exercises, and assessments.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
