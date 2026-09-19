@@ -1245,3 +1245,12 @@ button.text-link {
     top: 5vh;
   }
 }
+.core-ideas ul {
+  margin: 16px 0 0;
+  padding-left: 22px;
+  color: #3c525d;
+  line-height: 1.8;
+}
+.core-ideas li + li {
+  margin-top: 12px;
+}

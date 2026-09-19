@@ -21,6 +21,7 @@ export type Activity = {
   questions: Question[];
 };
 export type Lesson = {
+  objectives: string[];
   id: string;
   title: string;
   minutes: number;

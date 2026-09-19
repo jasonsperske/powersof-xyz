@@ -23,9 +23,9 @@ export const courses: CourseDefinition[] = [
   {
     id: "statistics",
     title: "Statistics",
-    subtitle: "Statistics, from the ground up.",
+    subtitle: "Descriptive statistics",
     description:
-      "Learn why the methods work. Four sessions a week: learn, practice, test, and retrieve.",
+      "Calculate and interpret the mean, variance, standard deviation, and z-scores. Derive their properties and distinguish population descriptions from sample estimates.",
     availability: "Week 1 available; Weeks 2–8 planned.",
     prerequisites: ["algebra.equations", "algebra.fractions", "probability.basic"],
     lessonIds: statisticsLessons.map((l) => l.id),
@@ -45,9 +45,9 @@ export const courses: CourseDefinition[] = [
   {
     id: "pre-algebra",
     title: "Pre-algebra",
-    subtitle: "Build confidence with numbers.",
+    subtitle: "Pre-algebra",
     description:
-      "Understand signed numbers, fractions, powers, and proportional reasoning before moving into algebra. Four guides, two checkpoints, and time to explain why.",
+      "Calculate with signed numbers, fractions, and powers. Use equivalent fractions, unit rates, and percentage multipliers to justify each calculation.",
     availability: "Complete introductory module: four guides and two checkpoints.",
     prerequisites: [],
     lessonIds: ["pre-integers", "pre-fractions", "pre-powers", "pre-ratios"],
@@ -73,9 +73,9 @@ export const courses: CourseDefinition[] = [
   {
     id: "algebra-1",
     title: "Algebra I · First Principles",
-    subtitle: "From numbers to relationships.",
+    subtitle: "Algebra I: expressions and relationships",
     description:
-      "Give quantities names, preserve equality, describe constraints, and connect inputs to outputs. An introductory algebra module, with pre-algebra as a helpful foundation.",
+      "Simplify expressions using equivalence. Solve equations with reversible operations, describe inequality solution sets, and interpret slope and intercept in linear functions.",
     availability:
       "First-principles module available; systems, polynomials, and quadratics planned.",
     prerequisites: ["algebra.signed-numbers", "algebra.fractions", "algebra.ratios"],

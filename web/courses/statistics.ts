@@ -68,19 +68,24 @@ export const weeks = [
 export const lessons: Lesson[] = [
   {
     id: "mean",
-    title: "The mean is a balance point",
+    objectives: [
+      "The mean is the total divided by the number of observations.",
+      "Deviations from the mean sum to zero; the mean minimizes the sum of squared deviations.",
+      "The mean and median describe different aspects of a distribution, especially when values are skewed.",
+    ],
+    title: "Mean, deviations, and squared distance",
     minutes: 35,
     concepts: ["stats.mean"],
     sections: [
       {
-        title: "Start with a question",
+        title: "Definition of the mean",
         text: "Four study sessions lasted 2, 4, 4, and 6 hours. We want one number describing their center, but we also want to know what that number hides. The mean shares the total equally among observations. For n observations, the subscript i labels each value; the summation sign means “add these terms.”",
         math: "\\bar{x}=\\frac{1}{n}\\sum_{i=1}^n x_i",
         example:
           "Here n = 4 and the total is 16 hours, so the mean is 4 hours. The datasets {4,4,4,4} and {2,4,4,6} share this mean, despite different variation.",
       },
       {
-        title: "Deviations carry direction",
+        title: "Signed deviations from the mean",
         text: "A deviation is an observation minus the mean. Negative deviations lie below the center; positive deviations lie above it. Our four deviations are −2, 0, 0, and 2 hours. Their sum is zero. This happens for every dataset, not just symmetric ones.",
         math: "\\sum_{i=1}^{n}(x_i-\\bar{x})=\\sum_{i=1}^{n}x_i-n\\bar{x}=n\\bar{x}-n\\bar{x}=0",
         example:
@@ -94,7 +99,7 @@ export const lessons: Lesson[] = [
           "For {2,4,4,6}, squared distances from 4 sum to 8. From 5 they sum to 12 = 8 + 4(4−5)². The mean uniquely minimizes the sum of squared distances.",
       },
       {
-        title: "Use the center with judgment",
+        title: "Mean versus median",
         text: "The mean is sensitive to extreme observations because each observation contributes to the total. The median is the middle ordered value (or mean of the two middle values) and can better describe a typical observation in a strongly skewed dataset. Neither is universally superior: match the summary to the question.",
         example:
           "For incomes {30,32,33,35,200}, the mean is 66 and median 33. The mean is useful for the total divided across people, but it does not describe a typical income well.",
@@ -103,7 +108,12 @@ export const lessons: Lesson[] = [
   },
   {
     id: "variance",
-    title: "Make variation measurable",
+    objectives: [
+      "Squared deviations measure spread without cancellation; variance has squared measurement units.",
+      "Standard deviation is the nonnegative square root of variance and has the original measurement units.",
+      "Population variance uses N; sample variance uses n−1 to correct estimation bias under independent identical sampling.",
+    ],
+    title: "Variance and standard deviation",
     minutes: 45,
     concepts: ["stats.mean", "stats.variance"],
     sections: [
@@ -115,7 +125,7 @@ export const lessons: Lesson[] = [
           "If {2,4,4,6} is the entire population of interest, squared deviations are 4,0,0,4. Population variance is 8/4 = 2 hours².",
       },
       {
-        title: "Return to the original units",
+        title: "Standard deviation and measurement units",
         text: "Standard deviation is the nonnegative square root of variance. If measurements are in hours, variance is in hours squared and standard deviation is in hours. Standard deviation is a scale of variation around the mean, not the literal average absolute distance.",
         math: "\\sigma=\\sqrt{\\sigma^2}",
         example:
@@ -139,7 +149,12 @@ export const lessons: Lesson[] = [
   },
   {
     id: "standardization",
-    title: "Change the scale, keep the structure",
+    objectives: [
+      "Adding a constant shifts the mean but leaves variance unchanged.",
+      "Multiplying observations by b multiplies variance by b² and standard deviation by |b|.",
+      "A z-score measures distance from a reference mean in standard deviations; it does not by itself specify a percentile.",
+    ],
+    title: "Linear transformations and z-scores",
     minutes: 40,
     concepts: ["stats.z-scores", "stats.variance"],
     sections: [
@@ -164,7 +179,7 @@ export const lessons: Lesson[] = [
           "A value with z = 2 is two standard deviations above the mean. It is not automatically the 97.7th percentile. That percentile follows from a normal model, not from standardization itself.",
       },
       {
-        title: "Connect the ideas",
+        title: "Summary: center, spread, and standardization",
         text: "Reconstruct the chain: the mean balances deviations; squared deviations quantify spread; standard deviation restores measurement units; standardization removes those units. Before a quiz, explain each link aloud, then work one example without notes.",
         example:
           "For the population {2,4,4,6}: μ = 4, σ² = 2, σ = √2. Standardized values are {−√2,0,0,√2}. They have population mean 0 and variance 1.",
@@ -230,7 +245,7 @@ const written = (
 export const activities: Activity[] = [
   {
     id: "diagnostic",
-    title: "Find your starting point",
+    title: "Statistics · Prerequisite diagnostic",
     description:
       "8 questions · About 15 minutes · Ungraded prerequisite check. Your responses inform your learning record, but there is no passing score.",
     kind: "diagnostic",
@@ -557,7 +572,7 @@ export const activities: Activity[] = [
   },
   {
     id: "review-1",
-    title: "Week 1 · Rebuild and retrieve",
+    title: "Week 1 · Review exercises",
     description:
       "6 fresh questions · Revisit weak concepts, or retrieve the ideas after a few days.",
     kind: "review",
