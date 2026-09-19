@@ -1,11 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { Maximize2, Minimize2, Pause, Play, RotateCcw } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
+import { Dialog } from '@base-ui/react/dialog';
 
 const MIN = -15;
 const MAX = 24;
@@ -400,9 +395,15 @@ export default function ScaleJourney() {
       setFallback(false);
       return;
     }
+    // Installed apps already own their window; use a viewport overlay there.
+    const standalone = window.matchMedia('(display-mode: standalone)').matches
+      || window.matchMedia('(display-mode: fullscreen)').matches
+      || (navigator as Navigator & { standalone?: boolean }).standalone === true;
+    if (standalone || !document.fullscreenEnabled || !root.current?.requestFullscreen) {
+      setFallback(true);
+      return;
+    }
     try {
-      if (!root.current?.requestFullscreen)
-        throw new Error('Use expanded view');
       await root.current.requestFullscreen();
     } catch {
       setFallback(true);
@@ -489,22 +490,24 @@ export default function ScaleJourney() {
         {controls(nativeFull)}
         {nativeFull && credit}
       </div>
-      <Dialog open={fallback} onOpenChange={setFallback}>
-        <DialogContent className="scale-dialog" showCloseButton={false}>
-          <DialogTitle className="sr-only">Powers of scale</DialogTitle>
-          <DialogDescription className="sr-only">
-            An illustrative comparison of orders of magnitude. Pause the
-            animation or press Escape to return to the course.
-          </DialogDescription>
-          <Scene exponent={exponent} expanded />
-          <div className="scale-heading">
-            <span>POWERS OF SCALE</span>
-            <h2>Each power of ten changes scale by a factor of 10.</h2>
-          </div>
-          {controls(true)}
-          {credit}
-        </DialogContent>
-      </Dialog>
+      <Dialog.Root open={fallback} onOpenChange={setFallback}>
+        <Dialog.Portal>
+          <Dialog.Popup className="scale-dialog" finalFocus={expandButton}>
+            <Dialog.Title className="sr-only">Powers of scale</Dialog.Title>
+            <Dialog.Description className="sr-only">
+              An illustrative comparison of orders of magnitude. Pause the
+              animation or press Escape to return to the course.
+            </Dialog.Description>
+            <Scene exponent={exponent} expanded />
+            <div className="scale-heading">
+              <span>POWERS OF SCALE</span>
+              <h2>Each power of ten changes scale by a factor of 10.</h2>
+            </div>
+            {controls(true)}
+            {credit}
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
     </>
   );
 }
