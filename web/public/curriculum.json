@@ -1,0 +1,2380 @@
+{
+  "format": "powersof-curriculum",
+  "version": "1.1",
+  "courses": [
+    {
+      "id": "statistics",
+      "title": "Statistics",
+      "subtitle": "Statistics, from the ground up.",
+      "description": "Learn why the methods work. Four sessions a week: learn, practice, test, and retrieve.",
+      "availability": "Week 1 available; Weeks 2–8 planned.",
+      "prerequisites": [
+        "algebra.equations",
+        "algebra.fractions",
+        "probability.basic"
+      ],
+      "lessonIds": [
+        "mean",
+        "variance",
+        "standardization"
+      ],
+      "activityIds": [
+        "diagnostic",
+        "worksheet-1",
+        "challenge-1",
+        "quiz-1",
+        "review-1"
+      ],
+      "diagnosticId": "diagnostic",
+      "reviewId": "review-1",
+      "units": [
+        {
+          "title": "Week 1 · Data, variation & standardization",
+          "lessonIds": [
+            "mean",
+            "variance",
+            "standardization"
+          ],
+          "practiceId": "worksheet-1",
+          "quizId": "quiz-1"
+        }
+      ],
+      "planned": [
+        "Probability & Bayes’ rule",
+        "Random variables & distributions",
+        "Sampling distributions & the CLT",
+        "Estimation & confidence intervals",
+        "Hypothesis tests, errors & power",
+        "Correlation & least-squares regression",
+        "Experimental design & synthesis"
+      ]
+    },
+    {
+      "id": "pre-algebra",
+      "title": "Pre-algebra",
+      "subtitle": "Build confidence with numbers.",
+      "description": "Understand signed numbers, fractions, powers, and proportional reasoning before moving into algebra. Four guides, two checkpoints, and time to explain why.",
+      "availability": "Complete introductory module: four guides and two checkpoints.",
+      "prerequisites": [],
+      "lessonIds": [
+        "pre-integers",
+        "pre-fractions",
+        "pre-powers",
+        "pre-ratios"
+      ],
+      "activityIds": [
+        "pre-diagnostic",
+        "pre-practice-1",
+        "pre-quiz-1",
+        "pre-practice-2",
+        "pre-quiz-2",
+        "pre-challenge",
+        "pre-review"
+      ],
+      "diagnosticId": "pre-diagnostic",
+      "reviewId": "pre-review",
+      "units": [
+        {
+          "title": "01 · Signed numbers & fractions",
+          "lessonIds": [
+            "pre-integers",
+            "pre-fractions"
+          ],
+          "practiceId": "pre-practice-1",
+          "quizId": "pre-quiz-1"
+        },
+        {
+          "title": "02 · Powers & proportional reasoning",
+          "lessonIds": [
+            "pre-powers",
+            "pre-ratios"
+          ],
+          "practiceId": "pre-practice-2",
+          "quizId": "pre-quiz-2"
+        }
+      ],
+      "planned": []
+    },
+    {
+      "id": "algebra-1",
+      "title": "Algebra I · First Principles",
+      "subtitle": "From numbers to relationships.",
+      "description": "Give quantities names, preserve equality, describe constraints, and connect inputs to outputs. An introductory algebra module, with pre-algebra as a helpful foundation.",
+      "availability": "First-principles module available; systems, polynomials, and quadratics planned.",
+      "prerequisites": [
+        "algebra.signed-numbers",
+        "algebra.fractions",
+        "algebra.ratios"
+      ],
+      "lessonIds": [
+        "alg-expressions",
+        "alg-equations",
+        "alg-inequalities",
+        "alg-functions"
+      ],
+      "activityIds": [
+        "alg-diagnostic",
+        "alg-practice-1",
+        "alg-quiz-1",
+        "alg-practice-2",
+        "alg-quiz-2",
+        "alg-challenge",
+        "alg-review"
+      ],
+      "diagnosticId": "alg-diagnostic",
+      "reviewId": "alg-review",
+      "units": [
+        {
+          "title": "01 · Expressions & equations",
+          "lessonIds": [
+            "alg-expressions",
+            "alg-equations"
+          ],
+          "practiceId": "alg-practice-1",
+          "quizId": "alg-quiz-1"
+        },
+        {
+          "title": "02 · Inequalities & functions",
+          "lessonIds": [
+            "alg-inequalities",
+            "alg-functions"
+          ],
+          "practiceId": "alg-practice-2",
+          "quizId": "alg-quiz-2"
+        }
+      ],
+      "planned": [
+        "Systems of linear equations",
+        "Polynomials and factoring",
+        "Quadratic equations and graphs"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "algebra.equations",
+      "title": "Equations & functions",
+      "prerequisites": [],
+      "keywords": [
+        "algebra",
+        "inverse operations",
+        "functions"
+      ]
+    },
+    {
+      "id": "algebra.fractions",
+      "title": "Fractions & exponents",
+      "prerequisites": [],
+      "keywords": [
+        "fractions",
+        "square roots",
+        "exponents"
+      ]
+    },
+    {
+      "id": "probability.basic",
+      "title": "Basic probability",
+      "prerequisites": [
+        "algebra.fractions"
+      ],
+      "keywords": [
+        "probability",
+        "equally likely outcomes"
+      ]
+    },
+    {
+      "id": "stats.mean",
+      "title": "Mean & deviations",
+      "prerequisites": [
+        "algebra.equations"
+      ],
+      "keywords": [
+        "mean",
+        "balance point",
+        "deviations"
+      ]
+    },
+    {
+      "id": "stats.variance",
+      "title": "Variance & standard deviation",
+      "prerequisites": [
+        "stats.mean",
+        "algebra.fractions"
+      ],
+      "keywords": [
+        "squared deviations",
+        "sample variance",
+        "degrees of freedom"
+      ]
+    },
+    {
+      "id": "stats.z-scores",
+      "title": "Standardization & transformations",
+      "prerequisites": [
+        "stats.variance"
+      ],
+      "keywords": [
+        "z-score",
+        "units",
+        "linear transformations"
+      ]
+    },
+    {
+      "id": "probability.conditional",
+      "title": "Conditional probability",
+      "prerequisites": [
+        "probability.basic"
+      ],
+      "keywords": [
+        "conditional probability",
+        "Bayes"
+      ]
+    },
+    {
+      "id": "stats.sampling",
+      "title": "Sampling & standard error",
+      "prerequisites": [
+        "stats.variance",
+        "probability.conditional"
+      ],
+      "keywords": [
+        "sampling",
+        "standard error",
+        "CLT"
+      ]
+    },
+    {
+      "id": "stats.inference",
+      "title": "Statistical inference",
+      "prerequisites": [
+        "stats.sampling"
+      ],
+      "keywords": [
+        "confidence intervals",
+        "hypothesis tests"
+      ]
+    },
+    {
+      "id": "algebra.signed-numbers",
+      "title": "Signed numbers & order of operations",
+      "prerequisites": [],
+      "keywords": [
+        "negative numbers",
+        "number line",
+        "order of operations"
+      ]
+    },
+    {
+      "id": "algebra.ratios",
+      "title": "Ratios, rates & percentages",
+      "prerequisites": [
+        "algebra.fractions"
+      ],
+      "keywords": [
+        "unit rate",
+        "proportion",
+        "percent",
+        "multiplicative comparison"
+      ]
+    },
+    {
+      "id": "algebra.expressions",
+      "title": "Expressions & equivalence",
+      "prerequisites": [
+        "algebra.signed-numbers"
+      ],
+      "keywords": [
+        "variable",
+        "like terms",
+        "distributive property",
+        "substitution"
+      ]
+    },
+    {
+      "id": "algebra.inequalities",
+      "title": "Inequalities & solution sets",
+      "prerequisites": [
+        "algebra.equations"
+      ],
+      "keywords": [
+        "inequality",
+        "negative multiplier",
+        "solution set"
+      ]
+    },
+    {
+      "id": "algebra.functions",
+      "title": "Functions & linear relationships",
+      "prerequisites": [
+        "algebra.equations",
+        "algebra.ratios"
+      ],
+      "keywords": [
+        "input",
+        "output",
+        "slope",
+        "intercept",
+        "domain"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "mean",
+      "title": "The mean is a balance point",
+      "minutes": 35,
+      "concepts": [
+        "stats.mean"
+      ],
+      "sections": [
+        {
+          "title": "Start with a question",
+          "text": "Four study sessions lasted 2, 4, 4, and 6 hours. We want one number describing their center, but we also want to know what that number hides. The mean shares the total equally among observations. For n observations, the subscript i labels each value; the summation sign means “add these terms.”",
+          "math": "\\bar{x}=\\frac{1}{n}\\sum_{i=1}^n x_i",
+          "example": "Here n = 4 and the total is 16 hours, so the mean is 4 hours. The datasets {4,4,4,4} and {2,4,4,6} share this mean, despite different variation."
+        },
+        {
+          "title": "Deviations carry direction",
+          "text": "A deviation is an observation minus the mean. Negative deviations lie below the center; positive deviations lie above it. Our four deviations are −2, 0, 0, and 2 hours. Their sum is zero. This happens for every dataset, not just symmetric ones.",
+          "math": "\\sum_{i=1}^{n}(x_i-\\bar{x})=\\sum_{i=1}^{n}x_i-n\\bar{x}=n\\bar{x}-n\\bar{x}=0",
+          "example": "For {1,2,9}, the mean is 4. Deviations −3, −2, and 5 still sum to zero. A mean need not be an observed value."
+        },
+        {
+          "title": "What does the mean minimize?",
+          "text": "Suppose you choose another center c. Write each deviation from c as a deviation from the mean plus the displacement of the mean from c. Expand the squares. The cross term vanishes because deviations from the mean sum to zero. The remaining term is nonnegative, and is zero exactly when c equals the mean.",
+          "math": "\\sum_i(x_i-c)^2=\\sum_i(x_i-\\bar{x})^2+n(\\bar{x}-c)^2",
+          "example": "For {2,4,4,6}, squared distances from 4 sum to 8. From 5 they sum to 12 = 8 + 4(4−5)². The mean uniquely minimizes the sum of squared distances."
+        },
+        {
+          "title": "Use the center with judgment",
+          "text": "The mean is sensitive to extreme observations because each observation contributes to the total. The median is the middle ordered value (or mean of the two middle values) and can better describe a typical observation in a strongly skewed dataset. Neither is universally superior: match the summary to the question.",
+          "example": "For incomes {30,32,33,35,200}, the mean is 66 and median 33. The mean is useful for the total divided across people, but it does not describe a typical income well."
+        }
+      ]
+    },
+    {
+      "id": "variance",
+      "title": "Make variation measurable",
+      "minutes": 45,
+      "concepts": [
+        "stats.mean",
+        "stats.variance"
+      ],
+      "sections": [
+        {
+          "title": "Why square the deviations?",
+          "text": "Averaging signed deviations always gives zero. Squaring removes cancellation, gives larger deviations more weight, and leads to useful algebra. Absolute deviations also measure spread, but have different mathematical properties. Variance uses squared deviations; it is not the only possible measure of spread.",
+          "math": "\\sigma^2=\\frac{1}{N}\\sum_{i=1}^N(x_i-\\mu)^2",
+          "example": "If {2,4,4,6} is the entire population of interest, squared deviations are 4,0,0,4. Population variance is 8/4 = 2 hours²."
+        },
+        {
+          "title": "Return to the original units",
+          "text": "Standard deviation is the nonnegative square root of variance. If measurements are in hours, variance is in hours squared and standard deviation is in hours. Standard deviation is a scale of variation around the mean, not the literal average absolute distance.",
+          "math": "\\sigma=\\sqrt{\\sigma^2}",
+          "example": "The population standard deviation of {2,4,4,6} is √2 ≈ 1.414 hours. Do not report 2 hours as the standard deviation."
+        },
+        {
+          "title": "A sample estimates a larger population",
+          "text": "When independent, identically distributed observations sample a population with finite variance, the sample mean is fitted to the same data. That fit makes deviations smaller on average than deviations from the true population mean. Dividing the squared deviations by n−1 corrects this downward bias in the variance estimate. It does not make the standard deviation itself unbiased.",
+          "math": "s^2=\\frac{1}{n-1}\\sum_{i=1}^n(x_i-\\bar{x})^2,\\qquad n>1",
+          "example": "If {2,4,4,6} is a sample used to estimate a broader population, s² = 8/3 and s ≈ 1.633. The data did not change; the purpose of the calculation did."
+        },
+        {
+          "title": "Why n−1 appears",
+          "text": "Because the deviations sum to zero, once n−1 of them are chosen, the last is determined. This explains the degrees of freedom. A stronger justification uses expectation: the sample mean has variance σ²/n, so fitting the mean removes one σ² of expected squared deviation. We will derive that variance-of-the-mean result in the sampling unit.",
+          "math": "\\sum_i(X_i-\\bar{X})^2=\\sum_i(X_i-\\mu)^2-n(\\bar{X}-\\mu)^2",
+          "example": "Taking expectations gives nσ² − n(σ²/n) = (n−1)σ². Therefore E[s²] = σ². Independence, a common distribution, and finite variance matter."
+        }
+      ]
+    },
+    {
+      "id": "standardization",
+      "title": "Change the scale, keep the structure",
+      "minutes": 40,
+      "concepts": [
+        "stats.z-scores",
+        "stats.variance"
+      ],
+      "sections": [
+        {
+          "title": "Shifting and rescaling",
+          "text": "Add a to every observation and multiply by b. The mean moves with the observations. Subtracting the new mean cancels the shift, leaving each deviation multiplied by b. Squaring multiplies variance by b²; taking the square root multiplies standard deviation by |b|.",
+          "math": "\\bar{y}=a+b\\bar{x},\\qquad s_y^2=b^2s_x^2,\\qquad s_y=|b|s_x",
+          "example": "If Celsius temperatures have mean 20 and SD 3, Fahrenheit values Y = 32 + 1.8X have mean 68 and SD 5.4. Adding 32 contributes no variation."
+        },
+        {
+          "title": "Measure position in standard deviations",
+          "text": "A z-score says how far an observation lies from its reference mean, measured in reference standard deviations. It has no units. Positive means above the mean; negative means below. Standardization requires positive standard deviation.",
+          "math": "z=\\frac{x-\\mu}{\\sigma}",
+          "example": "A score of 85 in a population with mean 70 and SD 10 has z = 1.5. A score of 65 has z = −0.5."
+        },
+        {
+          "title": "A z-score is not a percentile",
+          "text": "Standardizing a distribution changes its center and scale, not its shape. A skewed distribution stays skewed. A z-score alone cannot tell you the percentage below an observation; that requires distributional information. Rules based on a normal curve apply only when a normal model is appropriate.",
+          "example": "A value with z = 2 is two standard deviations above the mean. It is not automatically the 97.7th percentile. That percentile follows from a normal model, not from standardization itself."
+        },
+        {
+          "title": "Connect the ideas",
+          "text": "Reconstruct the chain: the mean balances deviations; squared deviations quantify spread; standard deviation restores measurement units; standardization removes those units. Before a quiz, explain each link aloud, then work one example without notes.",
+          "example": "For the population {2,4,4,6}: μ = 4, σ² = 2, σ = √2. Standardized values are {−√2,0,0,√2}. They have population mean 0 and variance 1."
+        }
+      ]
+    },
+    {
+      "id": "pre-integers",
+      "title": "Numbers have direction",
+      "minutes": 30,
+      "concepts": [
+        "algebra.signed-numbers"
+      ],
+      "sections": [
+        {
+          "title": "Locate before you calculate",
+          "text": "Positive and negative numbers describe positions relative to a chosen zero. On a number line, numbers increase to the right. Absolute value measures distance from zero, so it is nonnegative. The opposite of a number reverses its direction; it does not necessarily make the number negative.",
+          "math": "|-5|=5,\\qquad -(-5)=5",
+          "example": "A temperature of −7°C is lower than −2°C. Both are below zero, but −7 lies farther left. The distance between them is |−7−(−2)| = 5 degrees."
+        },
+        {
+          "title": "Addition combines changes",
+          "text": "Adding a positive number moves right; adding a negative number moves left. Subtracting a number means adding its opposite. This rule is more dependable than “two negatives make a positive,” which can confuse subtraction with multiplication.",
+          "math": "a-b=a+(-b)",
+          "example": "−4 + 7 = 3. Also, −4 − (−7) = −4 + 7 = 3, while −4 + (−7) = −11. Identify the operation before applying a sign rule."
+        },
+        {
+          "title": "Multiplication preserves arithmetic patterns",
+          "text": "Distributivity explains the sign rules. Since 3(2 + (−2)) = 0, the values 3·2 and 3·(−2) must be opposites. Repeating that reasoning with a negative multiplier gives a positive product for two negative factors.",
+          "math": "(-3)(2)+(-3)(-2)=(-3)\\cdot0=0",
+          "example": "The first term is −6, so the second must be +6. This derives (−3)(−2) = 6 from distributivity rather than a slogan."
+        },
+        {
+          "title": "Read the structure of an expression",
+          "text": "Evaluate parentheses, then powers, then multiplication and division from left to right, then addition and subtraction from left to right. Multiplication and division have equal priority. A minus sign outside a power is different from a negative base inside parentheses.",
+          "example": "18 ÷ 3 × 2 = 6 × 2 = 12. Also, −3² = −(3²) = −9, while (−3)² = 9. In 2 + 3(4 − 6), the result is 2 + 3(−2) = −4."
+        }
+      ]
+    },
+    {
+      "id": "pre-fractions",
+      "title": "Fractions are numbers, not two integers",
+      "minutes": 35,
+      "concepts": [
+        "algebra.fractions"
+      ],
+      "sections": [
+        {
+          "title": "Keep the size of the whole fixed",
+          "text": "A fraction a/b is a divided by b, with b nonzero. The denominator describes the size of each equal part; the numerator counts those parts. Multiplying numerator and denominator by the same nonzero number changes the name, not the value.",
+          "math": "\\frac{3}{4}=\\frac{3\\cdot2}{4\\cdot2}=\\frac{6}{8}",
+          "example": "Six eighths of one pizza is three quarters of that same pizza. Comparing fractions of differently sized pizzas requires knowing the whole."
+        },
+        {
+          "title": "Add quantities measured in the same parts",
+          "text": "You can combine numerators only after expressing both fractions with a common denominator. Adding denominators changes the unit instead of counting it. Reduce a fraction by dividing both numerator and denominator by a common nonzero factor.",
+          "math": "\\frac{2}{3}+\\frac{1}{4}=\\frac{8}{12}+\\frac{3}{12}=\\frac{11}{12}",
+          "example": "5/6 − 1/4 = 10/12 − 3/12 = 7/12. The incorrect answer 4/2 comes from subtracting denominators, which does not preserve the size of the parts."
+        },
+        {
+          "title": "Multiplication scales; division asks how many",
+          "text": "Multiplying by 2/3 takes two thirds of a quantity. Dividing by a nonzero fraction reverses that scaling, so multiply by its reciprocal. Division by zero remains undefined. A product can be smaller than either positive factor when the factors lie between zero and one.",
+          "math": "\\frac{3}{4}\\div\\frac{2}{5}=\\frac{3}{4}\\cdot\\frac{5}{2}=\\frac{15}{8}",
+          "example": "There are three half-cups in 1½ cups: (3/2) ÷ (1/2) = 3. You invert the divisor, not the number being divided."
+        }
+      ]
+    },
+    {
+      "id": "pre-powers",
+      "title": "Powers, roots & repeated multiplication",
+      "minutes": 30,
+      "concepts": [
+        "algebra.fractions",
+        "algebra.signed-numbers"
+      ],
+      "sections": [
+        {
+          "title": "An exponent counts factors",
+          "text": "For a positive integer n, aⁿ means n factors of a multiplied together. It does not mean a times n. When multiplying powers with the same base, combine their lists of factors. When raising a power to a power, repeat the whole list.",
+          "math": "a^m a^n=a^{m+n},\\qquad (a^m)^n=a^{mn}",
+          "example": "2³ · 2² = (2·2·2)(2·2) = 2⁵ = 32. By contrast, 2³ + 2² = 8 + 4 = 12; the product rule does not apply to addition."
+        },
+        {
+          "title": "Extend the pattern carefully",
+          "text": "For a nonzero base, reducing the exponent by one divides the value by the base. This gives a⁰ = 1 and a negative exponent as a reciprocal. A negative exponent does not mean a negative answer.",
+          "math": "a^0=1,\\qquad a^{-n}=\\frac{1}{a^n}\\quad(a\\ne0)",
+          "example": "10² = 100, 10¹ = 10, 10⁰ = 1, and 10⁻² = 0.01. Scientific notation 3.2 × 10⁴ means 32,000. We do not apply these reciprocal rules to a base of zero."
+        },
+        {
+          "title": "A root reverses a power with a convention",
+          "text": "The square-root symbol denotes the nonnegative root. Solving an equation is a different task: both 5 and −5 solve x² = 25. Because square roots return nonnegative values, √(x²) = |x| for real x.",
+          "math": "\\sqrt{25}=5,\\qquad x^2=25\\Longrightarrow x=5\\text{ or }x=-5",
+          "example": "√((-7)²) = √49 = 7, not −7. Also, √(9+16) = √25 = 5, whereas √9 + √16 = 7. Square roots do not distribute over addition."
+        }
+      ]
+    },
+    {
+      "id": "pre-ratios",
+      "title": "Compare by multiplication",
+      "minutes": 35,
+      "concepts": [
+        "algebra.ratios",
+        "algebra.fractions"
+      ],
+      "sections": [
+        {
+          "title": "Ratios compare quantities",
+          "text": "A ratio compares by division; a difference compares by subtraction. If a recipe uses 2 cups of oats for every 3 cups of milk, doubling both quantities preserves the ratio. Adding the same amount to each generally does not.",
+          "math": "\\frac{2}{3}=\\frac{4}{6}\\ne\\frac{3}{4}",
+          "example": "For 9 cups of milk, multiply both parts of 2:3 by 3, giving 6 cups of oats. The fraction of the mixture that is oats is 2/(2+3) = 2/5, not 2/3."
+        },
+        {
+          "title": "A unit rate makes comparisons easier",
+          "text": "A rate compares quantities with different units. Divide to obtain the amount per one unit. In a proportional relationship y = kx, k is constant and zero input gives zero output. A fixed starting fee breaks proportionality even when the variable rate is constant.",
+          "math": "y=kx",
+          "example": "Six notebooks cost $15, so the price is $2.50 per notebook. At that constant unit price, ten cost $25. A taxi fare of $4 plus $2 per kilometer is linear but not proportional."
+        },
+        {
+          "title": "Percent means per hundred",
+          "text": "Convert p percent to p/100 before multiplying. A percentage change is measured relative to a stated starting amount. Successive percentage changes use different bases, so equal increases and decreases do not usually cancel.",
+          "math": "\\text{new amount}=\\text{old amount}\\,(1+r)",
+          "example": "A $60 item discounted by 20% costs 60(0.8) = $48. If $100 increases by 10% and then decreases by 10%, the result is 100(1.1)(0.9) = $99."
+        }
+      ]
+    },
+    {
+      "id": "alg-expressions",
+      "title": "Use symbols to describe structure",
+      "minutes": 35,
+      "concepts": [
+        "algebra.expressions",
+        "algebra.signed-numbers"
+      ],
+      "sections": [
+        {
+          "title": "An expression is a rule for a value",
+          "text": "A variable represents a number whose value may be unknown or may vary. An expression has a value once its variables are specified. An equation asserts that two expressions are equal. Substitution must preserve grouping, especially when substituting negative numbers.",
+          "math": "2x^2-3x\\quad\\text{at }x=-2:\\quad2(-2)^2-3(-2)=14",
+          "example": "The expression 3x + 7 does not itself ask you to find x. The equation 3x + 7 = 22 does. Parentheses prevent sign mistakes when evaluating an expression."
+        },
+        {
+          "title": "Like terms count the same thing",
+          "text": "The terms 3x and 5x share the same variable part, so their coefficients add. Terms such as x and x² represent different quantities and cannot be combined into one like term. Constants combine with constants.",
+          "math": "3x+5x-2=8x-2",
+          "example": "4x + 3 − 2x + 7 = 2x + 10. But 4x + 3x² stays as two terms. At x=2 it equals 20, while 7x³ would equal 56, so that proposed simplification fails."
+        },
+        {
+          "title": "Distribute to every term",
+          "text": "Multiplication distributes over addition and subtraction. A negative sign before parentheses acts as multiplication by −1. Factoring reverses distribution by identifying a common multiplier.",
+          "math": "a(b+c)=ab+ac,\\qquad 6x+9=3(2x+3)",
+          "example": "−2(3x − 4) = −6x + 8. Also, 5 − (x + 2) = 5 − x − 2 = 3 − x. Testing a few values can disprove a proposed identity, but proving it for all values requires valid algebraic transformations."
+        }
+      ]
+    },
+    {
+      "id": "alg-equations",
+      "title": "Keep an equation in balance",
+      "minutes": 40,
+      "concepts": [
+        "algebra.equations",
+        "algebra.expressions"
+      ],
+      "sections": [
+        {
+          "title": "Solutions make a statement true",
+          "text": "Solving an equation means finding every allowed value that makes the equality true. Adding the same quantity to both sides or multiplying both sides by a nonzero number gives an equivalent equation. Do not divide by an expression that could be zero without considering that case.",
+          "math": "3x+7=22\\Longleftrightarrow3x=15\\Longleftrightarrow x=5",
+          "example": "Check by substitution: 3(5) + 7 = 22. “Move 7 and change its sign” is shorthand for subtracting 7 from both sides; the balanced operation is the reason it works."
+        },
+        {
+          "title": "Undo structure, not just symbols",
+          "text": "Distribute and collect like terms when needed. Then collect variable terms on one side and constants on the other. With fractions, multiplying every term on both sides by a common nonzero denominator can simplify the arithmetic.",
+          "math": "2(x-3)=x+5\\Longleftrightarrow2x-6=x+5\\Longleftrightarrow x=11",
+          "example": "x/3 + 2 = 5 gives x/3 = 3 and x = 9. Alternatively, multiply every term by 3: x + 6 = 15. Multiplying only one term would change the equation."
+        },
+        {
+          "title": "Not every equation has one solution",
+          "text": "If the variables cancel, inspect what remains. A true statement means every allowed real value is a solution. A false statement means there are no solutions. Neither case should be forced into “x = 0.”",
+          "example": "2(x+1) = 2x+2 reduces to 2 = 2, true for every real x. But 2(x+1) = 2x+5 reduces to 2 = 5, so there is no solution."
+        },
+        {
+          "title": "Translate a situation and check its meaning",
+          "text": "Define the variable with its units before writing an equation. An algebraic answer must also fit the situation, including restrictions such as nonnegative counts or whole numbers.",
+          "example": "A membership costs $12 plus $4 per visit. If the total is $40, let v be visits: 12 + 4v = 40. Then v = 7, a valid nonnegative integer. Check: 12 + 4(7) = 40."
+        }
+      ]
+    },
+    {
+      "id": "alg-inequalities",
+      "title": "Describe a whole set of answers",
+      "minutes": 30,
+      "concepts": [
+        "algebra.inequalities",
+        "algebra.equations"
+      ],
+      "sections": [
+        {
+          "title": "A boundary and a direction",
+          "text": "An inequality describes a set of values. The symbols < and > exclude the boundary; ≤ and ≥ include it. On a number line, use an open endpoint for a strict inequality and a closed endpoint for an included boundary.",
+          "math": "x<3\\quad\\text{means every real value less than }3",
+          "example": "Both 2 and −100 satisfy x < 3, but 3 does not. The solution is not just the largest integer below the boundary: real numbers such as 2.9 also qualify."
+        },
+        {
+          "title": "Negative scaling reverses order",
+          "text": "Adding the same quantity preserves order. Multiplying or dividing by a positive number also preserves it. Multiplying or dividing by a negative number reverses order because it reflects the number line.",
+          "math": "-2x<6\\Longleftrightarrow x>-3",
+          "example": "Since 2 < 5, multiplying by −1 gives −2 > −5. For −2x < 6, test x=0: 0<6 is true. It belongs to x>−3, not x<−3."
+        },
+        {
+          "title": "Translate constraints precisely",
+          "text": "“At most” includes the maximum; “less than” excludes it. A real-valued solution set may need to be restricted to whole numbers in a counting problem. Test both a boundary value and a value away from it.",
+          "example": "A budget of $25 covers a $5 fee and $4 tickets. The inequality 5 + 4t ≤ 25 gives t ≤ 5. Since tickets are nonnegative whole numbers, the possible counts are 0,1,2,3,4,5."
+        }
+      ]
+    },
+    {
+      "id": "alg-functions",
+      "title": "From inputs to linear relationships",
+      "minutes": 40,
+      "concepts": [
+        "algebra.functions",
+        "algebra.equations",
+        "algebra.ratios"
+      ],
+      "sections": [
+        {
+          "title": "One output for each allowed input",
+          "text": "A function assigns exactly one output to each input in its domain. Different inputs may share an output. The notation f(x) names the output produced by input x; it does not mean f multiplied by x.",
+          "math": "f(x)=2x+3,\\qquad f(4)=11",
+          "example": "The pairs {(1,4),(2,4),(3,7)} define a function on {1,2,3}. The pairs {(1,4),(1,6)} do not: input 1 has two outputs. A real function f(x)=1/x excludes zero from its domain."
+        },
+        {
+          "title": "Slope measures change per input unit",
+          "text": "A linear function y = mx + b has constant slope m. Compute slope as the change in output divided by the corresponding nonzero change in input. Use the same point order in numerator and denominator. The intercept b is the output when x = 0.",
+          "math": "m=\\frac{y_2-y_1}{x_2-x_1}\\quad(x_2\\ne x_1)",
+          "example": "Through (2,7) and (5,13), m = (13−7)/(5−2) = 2. Substitute a point into y=2x+b: 7=4+b, so b=3. The rule is y=2x+3. A vertical line has zero input change, so its slope is undefined and it is not a function y of x."
+        },
+        {
+          "title": "Distinguish linear from proportional",
+          "text": "A proportional relationship y = kx is a linear function with intercept zero. Constant rate alone does not make a relationship proportional. Interpret the slope and intercept in the units of the situation.",
+          "example": "A tank starts with 8 liters and fills at 3 liters per minute: V(t)=8+3t for t≥0 while the model remains valid. The slope is 3 liters per minute, and the intercept is the starting 8 liters. The relationship is linear but not proportional."
+        },
+        {
+          "title": "Move between rule, table, and graph",
+          "text": "A graph is a set of input-output pairs. Evaluate a rule to build a table, and plot those pairs to see the relationship. Equal input steps produce equal output changes for a linear function. A finite table can suggest a rule, but does not uniquely determine every unobserved value unless a model class is specified.",
+          "example": "For y=2x+3, inputs −1,0,1,2 give outputs 1,3,5,7. Plot (−1,1),(0,3),(1,5),(2,7); all lie on a line. The output increases by 2 each time the input increases by 1."
+        }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "diagnostic",
+      "title": "Find your starting point",
+      "description": "8 questions · About 15 minutes · Ungraded prerequisite check. Your responses inform your learning record, but there is no passing score.",
+      "kind": "diagnostic",
+      "questions": [
+        {
+          "id": "d1",
+          "prompt": "Solve 3x + 7 = 22. What is x?",
+          "answer": 5,
+          "concept": "algebra.equations",
+          "solution": "Subtract 7 to get 3x = 15, then divide by 3: x = 5.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "d2",
+          "prompt": "Evaluate 1/2 + 1/3. Enter a decimal or fraction.",
+          "answer": 0.8333333333333334,
+          "concept": "algebra.fractions",
+          "solution": "Use denominator 6: 3/6 + 2/6 = 5/6.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.001
+        },
+        {
+          "id": "d3",
+          "prompt": "Evaluate √49.",
+          "answer": 7,
+          "concept": "algebra.fractions",
+          "solution": "The nonnegative square root of 49 is 7.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "d4",
+          "prompt": "If f(x) = 2x² − 1, find f(3).",
+          "answer": 17,
+          "concept": "algebra.equations",
+          "solution": "2(3²) − 1 = 18 − 1 = 17.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "d5",
+          "prompt": "A fair six-sided die is rolled. What is the probability of a result greater than 4?",
+          "answer": 0.3333333333333333,
+          "concept": "probability.basic",
+          "solution": "Two of six equally likely outcomes, 5 and 6, qualify: 2/6 = 1/3.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.001
+        },
+        {
+          "id": "d6",
+          "prompt": "If n changes from 4 to 16, what is the new value of 1/√n?",
+          "answer": 0.25,
+          "concept": "algebra.fractions",
+          "solution": "1/√16 = 1/4 = 0.25.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "d7",
+          "prompt": "For x₁ = 2, x₂ = 5, x₃ = 8, evaluate Σᵢ₌₁³ xᵢ.",
+          "answer": 15,
+          "concept": "algebra.equations",
+          "solution": "The notation means 2 + 5 + 8 = 15.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "d8",
+          "prompt": "A fair coin has landed heads three times. Assuming independent tosses, what is P(heads next)?",
+          "options": [
+            "0",
+            "1/4",
+            "1/2",
+            "1"
+          ],
+          "answer": "1/2",
+          "concept": "probability.basic",
+          "solution": "Independence means previous results do not change the next toss probability.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions.",
+          "misconceptions": {
+            "0": "gambler-fallacy",
+            "1/4": "gambler-fallacy"
+          }
+        }
+      ]
+    },
+    {
+      "id": "worksheet-1",
+      "title": "Week 1 · Core worksheet",
+      "description": "18 problems · Work with notes · Numeric answers accept decimals or simple fractions. Written answers use a rubric after submission.",
+      "kind": "worksheet",
+      "questions": [
+        {
+          "id": "w1",
+          "prompt": "Find the mean of {2,4,4,6}.",
+          "answer": 4,
+          "concept": "stats.mean",
+          "solution": "(2 + 4 + 4 + 6)/4 = 4.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w2",
+          "prompt": "Find the mean of {1,2,9}.",
+          "answer": 4,
+          "concept": "stats.mean",
+          "solution": "12/3 = 4.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w3",
+          "prompt": "For {1,2,9}, what is the deviation of 9 from the mean?",
+          "answer": 5,
+          "concept": "stats.mean",
+          "solution": "9 − 4 = 5.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w4",
+          "prompt": "What is the sum of deviations from the mean for any finite nonempty dataset?",
+          "answer": 0,
+          "concept": "stats.mean",
+          "solution": "Σ(xᵢ − x̄) = Σxᵢ − nx̄ = 0.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w5",
+          "prompt": "For {2,4,4,6}, find the sum of squared deviations from the mean.",
+          "answer": 8,
+          "concept": "stats.variance",
+          "solution": "(−2)² + 0² + 0² + 2² = 8.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w6",
+          "prompt": "Treat {2,4,4,6} as the whole population. Find its variance.",
+          "answer": 2,
+          "concept": "stats.variance",
+          "solution": "Divide the sum 8 by population size 4: 2.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w7",
+          "prompt": "Treat {2,4,4,6} as a sample. Find its sample variance.",
+          "answer": 2.6666666666666665,
+          "concept": "stats.variance",
+          "solution": "Divide 8 by n−1 = 3: 8/3.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "2": "sample-population-confusion"
+          }
+        },
+        {
+          "id": "w8",
+          "prompt": "Find the population standard deviation of {2,4,4,6}, to three decimals.",
+          "answer": 1.4142135623730951,
+          "concept": "stats.variance",
+          "solution": "The square root of population variance 2 is about 1.414.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "2": "variance-sd-confusion"
+          }
+        },
+        {
+          "id": "w9",
+          "prompt": "Measurements are in meters. In what units is variance measured?",
+          "options": [
+            "meters",
+            "square meters",
+            "no units"
+          ],
+          "answer": "square meters",
+          "concept": "stats.variance",
+          "solution": "Squaring deviations squares the units.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions.",
+          "misconceptions": {
+            "meters": "variance-sd-confusion"
+          }
+        },
+        {
+          "id": "w10",
+          "prompt": "Every observation increases by 10. The original variance is 7. What is the new variance?",
+          "answer": 7,
+          "concept": "stats.z-scores",
+          "solution": "Shifting every observation does not change deviations.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w11",
+          "prompt": "Y = −3X + 2 and X has SD 4. Find the SD of Y.",
+          "answer": 12,
+          "concept": "stats.z-scores",
+          "solution": "SD scales by |−3|: 3 × 4 = 12.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "-12": "negative-standard-deviation"
+          }
+        },
+        {
+          "id": "w12",
+          "prompt": "Y = 5 + 2X and X has mean 8. Find the mean of Y.",
+          "answer": 21,
+          "concept": "stats.z-scores",
+          "solution": "5 + 2(8) = 21.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w13",
+          "prompt": "Find the z-score of 85 when the reference mean is 70 and SD is 10.",
+          "answer": 1.5,
+          "concept": "stats.z-scores",
+          "solution": "(85 − 70)/10 = 1.5.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w14",
+          "prompt": "An observation has z = −2, reference mean 100, and SD 15. Find the observation.",
+          "answer": 70,
+          "concept": "stats.z-scores",
+          "solution": "x = μ + zσ = 100 − 30 = 70.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "w15",
+          "prompt": "Does standardizing a skewed distribution make it normal?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": "No",
+          "concept": "stats.z-scores",
+          "solution": "A linear rescaling preserves distribution shape.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions.",
+          "misconceptions": {
+            "Yes": "standardization-implies-normality"
+          }
+        },
+        {
+          "id": "w16",
+          "prompt": "Explain why signed deviations cannot measure spread by their ordinary average. Give an example.",
+          "concept": "stats.mean",
+          "solution": "Deviations from the mean sum to zero, so their average is zero even for a spread-out dataset. For {1,3}, deviations −1 and 1 cancel.",
+          "rubric": [
+            "State that deviations from the mean sum to zero.",
+            "Give a nonconstant dataset with cancelling deviations.",
+            "Explain why zero average deviation hides spread."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "w17",
+          "prompt": "Explain why sample variance uses n−1 rather than n when estimating population variance under independent identical sampling.",
+          "concept": "stats.variance",
+          "solution": "Fitting the mean makes the squared deviations too small on average. Their expectation is (n−1)σ², so dividing by n−1 yields an unbiased estimate.",
+          "rubric": [
+            "Identify that the mean is estimated from the same sample.",
+            "Explain loss of one degree of freedom or downward bias.",
+            "Connect division by n−1 to unbiased estimation under the stated assumptions."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "w18",
+          "prompt": "A salary dataset has one exceptionally large value. Which best describes a typical salary without being pulled strongly by that value?",
+          "options": [
+            "Mean",
+            "Median",
+            "Variance"
+          ],
+          "answer": "Median",
+          "concept": "stats.mean",
+          "solution": "The median depends on rank and is less sensitive to a single extreme value.",
+          "kind": "choice",
+          "category": "judgment",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions."
+        }
+      ]
+    },
+    {
+      "id": "challenge-1",
+      "title": "Week 1 · Derivations",
+      "description": "4 written problems · Allow 30–45 minutes · Show each step before consulting the model solution.",
+      "kind": "challenge",
+      "questions": [
+        {
+          "id": "c1",
+          "prompt": "Prove Σᵢ(xᵢ − x̄) = 0 for n observations.",
+          "concept": "stats.mean",
+          "solution": "Σ(xᵢ − x̄) = Σxᵢ − nx̄. By definition x̄ = Σxᵢ/n, so the expression is zero.",
+          "rubric": [
+            "Distribute the sum correctly.",
+            "Use the definition of x̄.",
+            "Conclude exactly zero."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "c2",
+          "prompt": "Prove Σᵢ(xᵢ − c)² = Σᵢ(xᵢ − x̄)² + n(x̄ − c)². Explain why the mean minimizes squared distance.",
+          "concept": "stats.mean",
+          "solution": "Write xᵢ−c = (xᵢ−x̄)+(x̄−c), expand squares, and sum. The cross term is 2(x̄−c)Σ(xᵢ−x̄)=0. The remaining n(x̄−c)² is nonnegative, with equality only at c=x̄.",
+          "rubric": [
+            "Decompose each deviation.",
+            "Expand and eliminate the cross term.",
+            "Use nonnegativity to identify the unique minimizer."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "c3",
+          "prompt": "For yᵢ = a + bxᵢ, prove sᵧ² = b²sₓ² and sᵧ = |b|sₓ.",
+          "concept": "stats.z-scores",
+          "solution": "First ȳ=a+bx̄. Then yᵢ−ȳ=b(xᵢ−x̄). Square, sum, and divide by n−1. Taking nonnegative square roots gives |b|sₓ.",
+          "rubric": [
+            "Derive the transformed mean.",
+            "Show transformed deviations and variance.",
+            "Explain the absolute value in standard deviation."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "c4",
+          "prompt": "For a dataset with positive population SD, prove the standardized values have population mean 0 and variance 1.",
+          "concept": "stats.z-scores",
+          "solution": "The standardized mean is Σ(xᵢ−μ)/(Nσ)=0. The variance is Σ((xᵢ−μ)/σ)²/N = σ²/σ²=1.",
+          "rubric": [
+            "Use positive σ to justify division.",
+            "Show the standardized mean is zero.",
+            "Show the population variance is one."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        }
+      ]
+    },
+    {
+      "id": "quiz-1",
+      "title": "Week 1 · Check your understanding",
+      "description": "8 questions · Suggested time: 20 minutes · Close your notes. No hints. Each question is equally weighted; written reasoning is self-assessed.",
+      "kind": "quiz",
+      "questions": [
+        {
+          "id": "q1",
+          "prompt": "Find the mean of {3,5,7,9}.",
+          "answer": 6,
+          "concept": "stats.mean",
+          "solution": "24/4 = 6.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "q2",
+          "prompt": "Treat {3,5,7,9} as a sample. Find the sample variance.",
+          "answer": 6.666666666666667,
+          "concept": "stats.variance",
+          "solution": "Deviations −3,−1,1,3 square to 9,1,1,9; sum 20. Divide by 3.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "5": "sample-population-confusion"
+          }
+        },
+        {
+          "id": "q3",
+          "prompt": "A population has variance 25. Find its standard deviation.",
+          "answer": 5,
+          "concept": "stats.variance",
+          "solution": "√25 = 5.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "25": "variance-sd-confusion"
+          }
+        },
+        {
+          "id": "q4",
+          "prompt": "Y = 7 − 2X and X has variance 9. Find the variance of Y.",
+          "answer": 36,
+          "concept": "stats.z-scores",
+          "solution": "(−2)² × 9 = 36.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "q5",
+          "prompt": "Find the z-score of 42 when the reference mean is 50 and SD is 4.",
+          "answer": -2,
+          "concept": "stats.z-scores",
+          "solution": "(42 − 50)/4 = −2.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "q6",
+          "prompt": "Without a distributional assumption, z = 2 tells you that an observation is…",
+          "options": [
+            "At the 97.7th percentile",
+            "Two SDs above the reference mean",
+            "Twice the reference mean"
+          ],
+          "answer": "Two SDs above the reference mean",
+          "concept": "stats.z-scores",
+          "solution": "Only the standardized distance is guaranteed.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions.",
+          "misconceptions": {
+            "At the 97.7th percentile": "standardization-implies-normality"
+          }
+        },
+        {
+          "id": "q7",
+          "prompt": "A friend averages signed deviations from the mean and gets zero. They conclude there is no variation. Explain the error.",
+          "concept": "stats.mean",
+          "solution": "Signed deviations always cancel around the mean, even for variable data. Use squared or absolute deviations to avoid cancellation.",
+          "rubric": [
+            "Explain cancellation around the mean.",
+            "Distinguish zero signed average from zero variation.",
+            "Propose a valid spread measure."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        },
+        {
+          "id": "q8",
+          "prompt": "When would you divide squared deviations by N, and when by n−1? Explain the distinction.",
+          "concept": "stats.variance",
+          "solution": "Use N to describe the variance of the entire population of interest. Use n−1 for sample variance estimating a population variance under independent identical sampling; fitting the mean costs one degree of freedom.",
+          "rubric": [
+            "Distinguish population description from estimation.",
+            "Assign each denominator correctly.",
+            "Explain fitting the mean or unbiasedness."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        }
+      ]
+    },
+    {
+      "id": "review-1",
+      "title": "Week 1 · Rebuild and retrieve",
+      "description": "6 fresh questions · Revisit weak concepts, or retrieve the ideas after a few days.",
+      "kind": "review",
+      "questions": [
+        {
+          "id": "r1",
+          "prompt": "Find the mean of {2,6,10}.",
+          "answer": 6,
+          "concept": "stats.mean",
+          "solution": "18/3 = 6.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "r2",
+          "prompt": "Find the sample variance of {2,6,10}.",
+          "answer": 16,
+          "concept": "stats.variance",
+          "solution": "Squared deviations 16+0+16=32; divide by 2.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01,
+          "misconceptions": {
+            "10.666666666666666": "sample-population-confusion"
+          }
+        },
+        {
+          "id": "r3",
+          "prompt": "A population has SD 6. Every value is multiplied by −2. Find the new SD.",
+          "answer": 12,
+          "concept": "stats.z-scores",
+          "solution": "|−2| × 6 = 12.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "r4",
+          "prompt": "Find z when x = 18, μ = 12, and σ = 3.",
+          "answer": 2,
+          "concept": "stats.z-scores",
+          "solution": "(18−12)/3 = 2.",
+          "kind": "number",
+          "category": "calculation",
+          "hint": "Write the definition first. Check the units and denominator before calculating.",
+          "tolerance": 0.01
+        },
+        {
+          "id": "r5",
+          "prompt": "All values in a population equal 5. Can you compute ordinary z-scores?",
+          "options": [
+            "Yes, they all equal 0",
+            "No, SD is zero"
+          ],
+          "answer": "No, SD is zero",
+          "concept": "stats.z-scores",
+          "solution": "Standardization would divide by zero; z-scores are undefined.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Consider what the definition guarantees, and what requires additional assumptions."
+        },
+        {
+          "id": "r6",
+          "prompt": "Explain why adding a constant changes the mean but leaves variance unchanged.",
+          "concept": "stats.z-scores",
+          "solution": "The mean shifts by the same constant. Subtracting the new mean cancels the shift in every deviation, leaving squared deviations and variance unchanged.",
+          "rubric": [
+            "State how the mean shifts.",
+            "Show cancellation in deviations.",
+            "Conclude unchanged variance."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the definitions, show each algebraic step, and explain the conclusion in words."
+        }
+      ]
+    },
+    {
+      "id": "pre-diagnostic",
+      "title": "Pre-algebra · Starting point",
+      "kind": "diagnostic",
+      "questions": [
+        {
+          "id": "pd1",
+          "prompt": "Evaluate −3 + 8.",
+          "answer": 5,
+          "concept": "algebra.signed-numbers",
+          "solution": "Move 8 places right from −3 to reach 5.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pd2",
+          "prompt": "Evaluate 6 − 2 × 2.",
+          "answer": 2,
+          "concept": "algebra.signed-numbers",
+          "solution": "Multiply first: 6−4=2.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pd3",
+          "prompt": "Evaluate 1/2 + 1/4.",
+          "answer": 0.75,
+          "concept": "algebra.fractions",
+          "solution": "2/4+1/4=3/4.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.00075,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pd4",
+          "prompt": "Evaluate 3².",
+          "answer": 9,
+          "concept": "algebra.fractions",
+          "solution": "3² means 3×3=9, not 3×2.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pd5",
+          "prompt": "Find 10% of 80.",
+          "answer": 8,
+          "concept": "algebra.ratios",
+          "solution": "10/100×80=8.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pd6",
+          "prompt": "Four identical pens cost $6. What is the price of one pen?",
+          "answer": 1.5,
+          "concept": "algebra.ratios",
+          "solution": "Divide the total price by 4: $1.50 per pen.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        }
+      ],
+      "description": "6 questions · Ungraded starting-point check. No passing score."
+    },
+    {
+      "id": "pre-practice-1",
+      "title": "Pre-algebra · Signed numbers & fractions",
+      "kind": "worksheet",
+      "questions": [
+        {
+          "id": "pw1",
+          "prompt": "Evaluate −7 − (−2).",
+          "answer": -5,
+          "concept": "algebra.signed-numbers",
+          "solution": "Subtracting −2 adds 2: −7+2=−5.",
+          "misconceptions": {
+            "-9": "subtracting-negative"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw2",
+          "prompt": "Evaluate (−4)(−6).",
+          "answer": 24,
+          "concept": "algebra.signed-numbers",
+          "solution": "Two negative factors have a positive product: 24.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw3",
+          "prompt": "Evaluate 18 ÷ 3 × 2.",
+          "answer": 12,
+          "concept": "algebra.signed-numbers",
+          "solution": "Division and multiplication have equal priority; proceed left to right: 6×2=12.",
+          "misconceptions": {
+            "3": "multiplication-before-division"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw4",
+          "prompt": "Evaluate |−12|.",
+          "answer": 12,
+          "concept": "algebra.signed-numbers",
+          "solution": "Distance from zero is 12.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw5",
+          "prompt": "Evaluate 2/3 + 1/6.",
+          "answer": 0.8333333333333334,
+          "concept": "algebra.fractions",
+          "solution": "Use sixths: 4/6+1/6=5/6.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.0008333333333333334,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw6",
+          "prompt": "Evaluate 5/6 − 1/4.",
+          "answer": 0.5833333333333334,
+          "concept": "algebra.fractions",
+          "solution": "Use twelfths: 10/12−3/12=7/12.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.0005833333333333334,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw7",
+          "prompt": "Evaluate (3/4) × (2/5).",
+          "answer": 0.3,
+          "concept": "algebra.fractions",
+          "solution": "Multiply numerators and denominators: 6/20=3/10.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.0003,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw8",
+          "prompt": "Evaluate (3/4) ÷ (1/2).",
+          "answer": 1.5,
+          "concept": "algebra.fractions",
+          "solution": "Multiply by the reciprocal of the divisor: (3/4)×2=3/2.",
+          "misconceptions": {
+            ".375": "multiply-instead-of-divide"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        }
+      ],
+      "description": "8 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    },
+    {
+      "id": "pre-quiz-1",
+      "title": "Pre-algebra · Checkpoint 1",
+      "kind": "quiz",
+      "questions": [
+        {
+          "id": "pq1",
+          "prompt": "Evaluate −9 + 4 − (−3).",
+          "answer": -2,
+          "concept": "algebra.signed-numbers",
+          "solution": "−9+4+3=−2.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq2",
+          "prompt": "Evaluate 20 ÷ 5 × 3 − 2.",
+          "answer": 10,
+          "concept": "algebra.signed-numbers",
+          "solution": "4×3−2=10.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq3",
+          "prompt": "Evaluate 3/5 + 1/4.",
+          "answer": 0.85,
+          "concept": "algebra.fractions",
+          "solution": "12/20+5/20=17/20.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.00085,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq4",
+          "prompt": "Evaluate (2/3) ÷ (4/9).",
+          "answer": 1.5,
+          "concept": "algebra.fractions",
+          "solution": "(2/3)×(9/4)=18/12=3/2.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq5",
+          "prompt": "Why must fractions have a common denominator before their numerators are added?",
+          "concept": "algebra.fractions",
+          "solution": "The denominator identifies the size of the parts. Rewrite each fraction using equally sized parts before counting them together. For example 1/2+1/3=3/6+2/6=5/6.",
+          "rubric": [
+            "Explain what the denominator represents.",
+            "Use equally sized parts in an example.",
+            "Add numerators while keeping that common denominator."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        }
+      ],
+      "description": "5 questions · About 15 minutes. Close your notes; all questions have equal weight."
+    },
+    {
+      "id": "pre-practice-2",
+      "title": "Pre-algebra · Powers, ratios & percentages",
+      "kind": "worksheet",
+      "questions": [
+        {
+          "id": "pw9",
+          "prompt": "Evaluate 2³ × 2⁴.",
+          "answer": 128,
+          "concept": "algebra.fractions",
+          "solution": "Same base: 2⁷=128.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw10",
+          "prompt": "Evaluate 5⁰.",
+          "answer": 1,
+          "concept": "algebra.fractions",
+          "solution": "A nonzero base to power zero equals 1.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw11",
+          "prompt": "Evaluate 10⁻³.",
+          "answer": 0.001,
+          "concept": "algebra.fractions",
+          "solution": "The negative exponent gives 1/1000.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.000001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw12",
+          "prompt": "Evaluate √81.",
+          "answer": 9,
+          "concept": "algebra.fractions",
+          "solution": "The square-root symbol gives the nonnegative root, 9.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw13",
+          "prompt": "A ratio is 3 cups flour to 2 cups water. How much flour for 8 cups water?",
+          "answer": 12,
+          "concept": "algebra.ratios",
+          "solution": "Scale both quantities by 4: 3×4=12 cups.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw14",
+          "prompt": "Five notebooks cost $17.50. What is the unit price?",
+          "answer": 3.5,
+          "concept": "algebra.ratios",
+          "solution": "17.50÷5=$3.50 per notebook.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw15",
+          "prompt": "An $80 item is discounted by 25%. What is the new price?",
+          "answer": 60,
+          "concept": "algebra.ratios",
+          "solution": "80×0.75=60; the discount itself is $20.",
+          "misconceptions": {
+            "20": "confusing-discount-with-price"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pw16",
+          "prompt": "A quantity rises from 40 to 50. What is the percent increase? Enter the percent number.",
+          "answer": 25,
+          "concept": "algebra.ratios",
+          "solution": "The increase is 10, relative to the initial 40: 10/40×100=25.",
+          "misconceptions": {
+            "20": "wrong-percent-base"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        }
+      ],
+      "description": "8 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    },
+    {
+      "id": "pre-quiz-2",
+      "title": "Pre-algebra · Checkpoint 2",
+      "kind": "quiz",
+      "questions": [
+        {
+          "id": "pq6",
+          "prompt": "Evaluate (3²)².",
+          "answer": 81,
+          "concept": "algebra.fractions",
+          "solution": "(3²)²=3⁴=81.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq7",
+          "prompt": "Evaluate 2⁻³.",
+          "answer": 0.125,
+          "concept": "algebra.fractions",
+          "solution": "1/2³=1/8.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.000125,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq8",
+          "prompt": "A drink mixes juice and water in ratio 2:5. For 15 cups of water, how many cups of juice?",
+          "answer": 6,
+          "concept": "algebra.ratios",
+          "solution": "Scale 5 to 15 by 3; juice is 2×3=6.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq9",
+          "prompt": "A $50 bill increases by 12%. What is the new amount?",
+          "answer": 56,
+          "concept": "algebra.ratios",
+          "solution": "50×1.12=56.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pq10",
+          "prompt": "Which relationship is proportional?",
+          "options": [
+            "y = 4x",
+            "y = 4x + 3",
+            "y = x²"
+          ],
+          "answer": "y = 4x",
+          "concept": "algebra.ratios",
+          "solution": "A proportional relationship has a constant y/x for nonzero x and passes through the origin.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        }
+      ],
+      "description": "5 questions · About 15 minutes. Close your notes; all questions have equal weight."
+    },
+    {
+      "id": "pre-challenge",
+      "title": "Pre-algebra · Explain the rules",
+      "kind": "challenge",
+      "questions": [
+        {
+          "id": "pc1",
+          "prompt": "Use the distributive property to explain why (−2)(−3)=6.",
+          "concept": "algebra.signed-numbers",
+          "solution": "Because (−2)(3+(−3))=0, we have −6+(−2)(−3)=0. The remaining product must therefore be 6.",
+          "rubric": [
+            "Start from a sum equal to zero.",
+            "Distribute −2 across both terms.",
+            "Use the known product −6 to deduce the other product."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        },
+        {
+          "id": "pc2",
+          "prompt": "Explain why increasing a positive price by 20% and then decreasing it by 20% does not restore it.",
+          "concept": "algebra.ratios",
+          "solution": "The multipliers are 1.2 and 0.8, so the final price is 0.96 times the original. The decrease is applied to the higher price; the final amount is 4% below the original.",
+          "rubric": [
+            "Use the multipliers 1.2 and 0.8.",
+            "Explain that the second percentage has a different base.",
+            "Obtain 0.96 of the starting price and interpret it."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        }
+      ],
+      "description": "2 questions · Show your reasoning, then assess it against the rubric."
+    },
+    {
+      "id": "pre-review",
+      "title": "Pre-algebra · Fresh retrieval practice",
+      "kind": "review",
+      "questions": [
+        {
+          "id": "pr1",
+          "prompt": "Evaluate −5(2−6).",
+          "answer": 20,
+          "concept": "algebra.signed-numbers",
+          "solution": "First 2−6=−4; then (−5)(−4)=20.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pr2",
+          "prompt": "Evaluate 7/8 − 1/3.",
+          "answer": 0.5416666666666666,
+          "concept": "algebra.fractions",
+          "solution": "21/24−8/24=13/24.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.0005416666666666666,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pr3",
+          "prompt": "Evaluate 4⁻¹.",
+          "answer": 0.25,
+          "concept": "algebra.fractions",
+          "solution": "4⁻¹=1/4.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.00025,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pr4",
+          "prompt": "A model uses 1 cm for 5 m. What real distance in meters does 7 cm represent?",
+          "answer": 35,
+          "concept": "algebra.ratios",
+          "solution": "Multiply 7 by the constant rate 5 m per cm.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pr5",
+          "prompt": "Find 15% of 60.",
+          "answer": 9,
+          "concept": "algebra.ratios",
+          "solution": "0.15×60=9.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "pr6",
+          "prompt": "Which is true?",
+          "options": [
+            "√(9+16)=7",
+            "√25=5",
+            "The only solution of x²=25 is 5"
+          ],
+          "answer": "√25=5",
+          "concept": "algebra.fractions",
+          "solution": "The principal square root is 5. The equation has solutions ±5, and √(9+16)=5.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        }
+      ],
+      "description": "6 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    },
+    {
+      "id": "alg-diagnostic",
+      "title": "Algebra I · Starting point",
+      "kind": "diagnostic",
+      "questions": [
+        {
+          "id": "ad1",
+          "prompt": "Evaluate −6 + 10.",
+          "answer": 4,
+          "concept": "algebra.signed-numbers",
+          "solution": "Move 10 units right from −6.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ad2",
+          "prompt": "Evaluate 3/4 − 1/2.",
+          "answer": 0.25,
+          "concept": "algebra.fractions",
+          "solution": "3/4−2/4=1/4.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.00025,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ad3",
+          "prompt": "Evaluate 2x+3 at x=4.",
+          "answer": 11,
+          "concept": "algebra.expressions",
+          "solution": "Substitute 4: 8+3=11.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ad4",
+          "prompt": "Solve x + 7 = 12.",
+          "answer": 5,
+          "concept": "algebra.equations",
+          "solution": "Subtract 7 from both sides.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ad5",
+          "prompt": "Three tickets cost $21 at a constant unit price. What is the price of one?",
+          "answer": 7,
+          "concept": "algebra.ratios",
+          "solution": "21÷3=7.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ad6",
+          "prompt": "Which is an equation?",
+          "options": [
+            "3x + 2",
+            "3x + 2 = 11",
+            "3x"
+          ],
+          "answer": "3x + 2 = 11",
+          "concept": "algebra.expressions",
+          "solution": "An equation states that two expressions have equal values.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        }
+      ],
+      "description": "6 questions · Ungraded starting-point check. No passing score."
+    },
+    {
+      "id": "alg-practice-1",
+      "title": "Algebra I · Expressions & equations",
+      "kind": "worksheet",
+      "questions": [
+        {
+          "id": "aw1",
+          "prompt": "Evaluate 2x²−3x when x=−2.",
+          "answer": 14,
+          "concept": "algebra.expressions",
+          "solution": "2(−2)²−3(−2)=8+6=14.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw2",
+          "prompt": "Simplify 4x + 3 − 2x + 7.",
+          "options": [
+            "2x + 10",
+            "2x + 4",
+            "12x"
+          ],
+          "answer": "2x + 10",
+          "concept": "algebra.expressions",
+          "solution": "Combine x terms and constants separately: (4−2)x+(3+7).",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw3",
+          "prompt": "Expand −3(2x−5).",
+          "options": [
+            "−6x−15",
+            "−6x+15",
+            "−6x+5"
+          ],
+          "answer": "−6x+15",
+          "concept": "algebra.expressions",
+          "solution": "Multiply every term by −3; (−3)(−5)=15.",
+          "misconceptions": {
+            "−6x−15": "negative-distribution"
+          },
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw4",
+          "prompt": "Solve 3x+7=25.",
+          "answer": 6,
+          "concept": "algebra.equations",
+          "solution": "Subtract 7: 3x=18. Divide by 3: x=6.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw5",
+          "prompt": "Solve 2(x−3)=x+5.",
+          "answer": 11,
+          "concept": "algebra.equations",
+          "solution": "2x−6=x+5; subtract x and add 6 to obtain x=11.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw6",
+          "prompt": "Solve x/4+2=7.",
+          "answer": 20,
+          "concept": "algebra.equations",
+          "solution": "Subtract 2, then multiply by 4: x=20.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw7",
+          "prompt": "How many real solutions does 3(x+2)=3x+6 have?",
+          "options": [
+            "None",
+            "Exactly one",
+            "Every real number"
+          ],
+          "answer": "Every real number",
+          "concept": "algebra.equations",
+          "solution": "Both sides are identical after expansion.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw8",
+          "prompt": "A service costs $8 plus $3 per use. A bill totals $29. How many uses?",
+          "answer": 7,
+          "concept": "algebra.equations",
+          "solution": "8+3u=29, so 3u=21 and u=7.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        }
+      ],
+      "description": "8 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    },
+    {
+      "id": "alg-quiz-1",
+      "title": "Algebra I · Checkpoint 1",
+      "kind": "quiz",
+      "questions": [
+        {
+          "id": "aq1",
+          "prompt": "Evaluate 3x²+2 at x=−3.",
+          "answer": 29,
+          "concept": "algebra.expressions",
+          "solution": "3×9+2=29.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aq2",
+          "prompt": "Simplify 7−(2x+4).",
+          "options": [
+            "3−2x",
+            "11−2x",
+            "3+2x"
+          ],
+          "answer": "3−2x",
+          "concept": "algebra.expressions",
+          "solution": "Distribute the minus sign: 7−2x−4=3−2x.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aq3",
+          "prompt": "Solve 5x−4=2x+11.",
+          "answer": 5,
+          "concept": "algebra.equations",
+          "solution": "Subtract 2x, add 4, then divide by 3: 3x=15.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aq4",
+          "prompt": "How many real solutions does 2x+3=2x−1 have?",
+          "options": [
+            "None",
+            "Exactly one",
+            "Every real number"
+          ],
+          "answer": "None",
+          "concept": "algebra.equations",
+          "solution": "Subtracting 2x gives 3=−1, a false statement.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aq5",
+          "prompt": "Explain why subtracting 7 from both sides of 3x+7=22 preserves its solutions.",
+          "concept": "algebra.equations",
+          "solution": "Equal quantities remain equal after subtracting the same number. The operation can be reversed by adding 7 to both sides, so it neither loses nor introduces solutions.",
+          "rubric": [
+            "Apply the same operation to both sides.",
+            "Explain preservation of equality.",
+            "Explain reversibility or check the resulting solution."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        }
+      ],
+      "description": "5 questions · About 15 minutes. Close your notes; all questions have equal weight."
+    },
+    {
+      "id": "alg-practice-2",
+      "title": "Algebra I · Inequalities & functions",
+      "kind": "worksheet",
+      "questions": [
+        {
+          "id": "aw9",
+          "prompt": "Solve −3x ≤ 12.",
+          "options": [
+            "x ≤ −4",
+            "x ≥ −4",
+            "x ≥ 4"
+          ],
+          "answer": "x ≥ −4",
+          "concept": "algebra.inequalities",
+          "solution": "Divide both sides by −3 and reverse the inequality.",
+          "misconceptions": {
+            "x ≤ −4": "inequality-direction"
+          },
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw10",
+          "prompt": "Which value does NOT satisfy x < 2?",
+          "options": [
+            "−4",
+            "1.9",
+            "2"
+          ],
+          "answer": "2",
+          "concept": "algebra.inequalities",
+          "solution": "A strict inequality excludes its boundary.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw11",
+          "prompt": "A $6 fee plus $4 per ticket must total at most $30. What is the greatest whole number of tickets?",
+          "answer": 6,
+          "concept": "algebra.inequalities",
+          "solution": "6+4t≤30 gives t≤6; 6 is an allowed integer.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw12",
+          "prompt": "For f(x)=−2x+5, find f(3).",
+          "answer": -1,
+          "concept": "algebra.functions",
+          "solution": "−2×3+5=−1.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw13",
+          "prompt": "Find the slope through (1,4) and (4,10).",
+          "answer": 2,
+          "concept": "algebra.functions",
+          "solution": "(10−4)/(4−1)=6/3=2.",
+          "misconceptions": {
+            ".5": "reciprocal-slope"
+          },
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw14",
+          "prompt": "A line has slope 3 and passes through (2,11). Find its y-intercept.",
+          "answer": 5,
+          "concept": "algebra.functions",
+          "solution": "11=3×2+b, so b=5.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aw15",
+          "prompt": "Which relation is a function of its first coordinate?",
+          "options": [
+            "{(1,2),(1,3)}",
+            "{(1,2),(2,2)}"
+          ],
+          "answer": "{(1,2),(2,2)}",
+          "concept": "algebra.functions",
+          "solution": "Each input has one output; distinct inputs may share an output.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aw16",
+          "prompt": "A taxi fare is C(d)=4+2d. What does 4 mean?",
+          "options": [
+            "Cost per kilometer",
+            "Starting fee",
+            "Maximum distance"
+          ],
+          "answer": "Starting fee",
+          "concept": "algebra.functions",
+          "solution": "C(0)=4, the charge before traveling any distance.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        }
+      ],
+      "description": "8 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    },
+    {
+      "id": "alg-quiz-2",
+      "title": "Algebra I · Checkpoint 2",
+      "kind": "quiz",
+      "questions": [
+        {
+          "id": "aq6",
+          "prompt": "Solve −2x > 8.",
+          "options": [
+            "x > −4",
+            "x < −4",
+            "x < 4"
+          ],
+          "answer": "x < −4",
+          "concept": "algebra.inequalities",
+          "solution": "Dividing by −2 reverses the direction.",
+          "misconceptions": {
+            "x > −4": "inequality-direction"
+          },
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aq7",
+          "prompt": "For g(x)=3x−7, find g(5).",
+          "answer": 8,
+          "concept": "algebra.functions",
+          "solution": "15−7=8.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aq8",
+          "prompt": "Find the slope through (−1,6) and (2,0).",
+          "answer": -2,
+          "concept": "algebra.functions",
+          "solution": "(0−6)/(2−(−1))=−6/3=−2.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "aq9",
+          "prompt": "Which function describes a proportional relationship?",
+          "options": [
+            "f(x)=5x",
+            "f(x)=5x+1",
+            "f(x)=x²"
+          ],
+          "answer": "f(x)=5x",
+          "concept": "algebra.functions",
+          "solution": "A proportional relationship has a constant multiplier and zero intercept.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "aq10",
+          "prompt": "A tank starts with 10 liters and gains 2 liters each minute. State a function for its volume and interpret both numbers.",
+          "concept": "algebra.functions",
+          "solution": "V(t)=10+2t for t≥0 while the model applies. Ten liters is the starting amount; 2 liters per minute is the rate.",
+          "rubric": [
+            "Write V(t)=10+2t with t in minutes.",
+            "Interpret the intercept with units.",
+            "Interpret the slope with units and acknowledge the time domain or model limits."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        }
+      ],
+      "description": "5 questions · About 15 minutes. Close your notes; all questions have equal weight."
+    },
+    {
+      "id": "alg-challenge",
+      "title": "Algebra I · Justify and connect",
+      "kind": "challenge",
+      "questions": [
+        {
+          "id": "ac1",
+          "prompt": "Prove that 2(x+3)−x and x+6 are equal for every real x. Explain why checking one value alone is insufficient.",
+          "concept": "algebra.expressions",
+          "solution": "Distribution gives 2x+6−x=x+6 for arbitrary real x. One matching value does not guarantee equality elsewhere; x and x² agree at 1 but differ at 2.",
+          "rubric": [
+            "Distribute and collect terms correctly.",
+            "Explain why the steps hold for arbitrary x.",
+            "Explain or illustrate why one example does not prove an identity."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        },
+        {
+          "id": "ac2",
+          "prompt": "Explain why a line with equation y=mx+b is proportional precisely when b=0.",
+          "concept": "algebra.functions",
+          "solution": "If b=0 then y=mx has constant multiplier m. Conversely, a proportional rule y=kx gives y=0 at x=0, but the line gives y=b there, so b must be 0.",
+          "rubric": [
+            "Connect b=0 with a constant multiplier.",
+            "Evaluate the rule at x=0.",
+            "Explain both directions of the statement."
+          ],
+          "kind": "written",
+          "category": "reasoning",
+          "hint": "State the rule, justify it, and use an example to make the reasoning visible."
+        }
+      ],
+      "description": "2 questions · Show your reasoning, then assess it against the rubric."
+    },
+    {
+      "id": "alg-review",
+      "title": "Algebra I · Fresh retrieval practice",
+      "kind": "review",
+      "questions": [
+        {
+          "id": "ar1",
+          "prompt": "Evaluate 4−2x at x=−3.",
+          "answer": 10,
+          "concept": "algebra.expressions",
+          "solution": "4−2(−3)=4+6=10.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ar2",
+          "prompt": "Solve 4(x+1)=20.",
+          "answer": 4,
+          "concept": "algebra.equations",
+          "solution": "Divide by 4, then subtract 1: x=4.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ar3",
+          "prompt": "Solve −5x ≥ 15.",
+          "options": [
+            "x ≥ −3",
+            "x ≤ −3",
+            "x ≤ 3"
+          ],
+          "answer": "x ≤ −3",
+          "concept": "algebra.inequalities",
+          "solution": "Divide by −5 and reverse the inequality.",
+          "misconceptions": {
+            "x ≥ −3": "inequality-direction"
+          },
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        },
+        {
+          "id": "ar4",
+          "prompt": "Find the slope through (0,−2) and (4,10).",
+          "answer": 3,
+          "concept": "algebra.functions",
+          "solution": "(10−(−2))/(4−0)=12/4=3.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ar5",
+          "prompt": "For h(x)=x/2+3, find h(8).",
+          "answer": 7,
+          "concept": "algebra.functions",
+          "solution": "8/2+3=7.",
+          "kind": "number",
+          "category": "calculation",
+          "tolerance": 0.001,
+          "hint": "Write the operation or relationship explicitly. Keep signs, units, and grouping visible."
+        },
+        {
+          "id": "ar6",
+          "prompt": "Which input is excluded from the real domain of f(x)=1/x?",
+          "options": [
+            "−1",
+            "0",
+            "1"
+          ],
+          "answer": "0",
+          "concept": "algebra.functions",
+          "solution": "Division by zero is undefined.",
+          "kind": "choice",
+          "category": "interpretation",
+          "hint": "Try a simple example, then check the definition or rule."
+        }
+      ],
+      "description": "6 questions · Work at your own pace. Enter numbers as decimals or simple fractions."
+    }
+  ]
+}

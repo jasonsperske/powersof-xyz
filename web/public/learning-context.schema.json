@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "powersof learning context",
+  "type": "object",
+  "required": [
+    "format",
+    "version",
+    "generatedAt",
+    "mode",
+    "learner",
+    "courses",
+    "evidence",
+    "externalAssessments",
+    "successfulWork",
+    "assessmentRequest",
+    "methodology"
+  ],
+  "properties": {
+    "format": {
+      "const": "powersof-learning-context"
+    },
+    "version": {
+      "const": "1.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "enum": [
+        "compact",
+        "full",
+        "assessment-only"
+      ]
+    },
+    "learner": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "url",
+          "manifest",
+          "objectives"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "manifest": {
+            "type": "string",
+            "format": "uri"
+          },
+          "objectives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "prerequisites",
+                "attempts",
+                "status",
+                "mastery",
+                "resources"
+              ],
+              "properties": {
+                "id": {
+                  "enum": [
+                    "algebra.equations",
+                    "algebra.fractions",
+                    "probability.basic",
+                    "stats.mean",
+                    "stats.variance",
+                    "stats.z-scores",
+                    "probability.conditional",
+                    "stats.sampling",
+                    "stats.inference",
+                    "algebra.signed-numbers",
+                    "algebra.ratios",
+                    "algebra.expressions",
+                    "algebra.inequalities",
+                    "algebra.functions"
+                  ]
+                },
+                "title": {
+                  "type": "string"
+                },
+                "prerequisites": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "attempts": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "status": {
+                  "enum": [
+                    "Not started",
+                    "Developing",
+                    "Needs practice",
+                    "Mastered"
+                  ]
+                },
+                "mastery": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "resources": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "activityId",
+          "questionId",
+          "concept",
+          "answer",
+          "score",
+          "maxScore",
+          "grading",
+          "at"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "activityId": {
+            "type": "string"
+          },
+          "questionId": {
+            "type": "string"
+          },
+          "concept": {
+            "enum": [
+              "algebra.equations",
+              "algebra.fractions",
+              "probability.basic",
+              "stats.mean",
+              "stats.variance",
+              "stats.z-scores",
+              "probability.conditional",
+              "stats.sampling",
+              "stats.inference",
+              "algebra.signed-numbers",
+              "algebra.ratios",
+              "algebra.expressions",
+              "algebra.inequalities",
+              "algebra.functions"
+            ]
+          },
+          "answer": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "maxScore": {
+            "const": 1
+          },
+          "grading": {
+            "enum": [
+              "automatic",
+              "self"
+            ]
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "externalAssessments": {
+      "type": "array"
+    },
+    "successfulWork": {
+      "type": "array"
+    },
+    "assessmentRequest": {
+      "type": "object",
+      "required": [
+        "goal",
+        "instructionsUrl",
+        "schemaUrl"
+      ]
+    },
+    "methodology": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "lessons",
+        "activities"
+      ]
+    },
+    "notes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "full"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "content",
+          "notes"
+        ]
+      }
+    }
+  ]
+}

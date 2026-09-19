@@ -1,0 +1,603 @@
+import type { Activity, Lesson, Question } from "../src/types";
+export const concepts = [
+  {
+    id: "algebra.equations",
+    title: "Equations & functions",
+    prerequisites: [],
+    keywords: ["algebra", "inverse operations", "functions"],
+  },
+  {
+    id: "algebra.fractions",
+    title: "Fractions & exponents",
+    prerequisites: [],
+    keywords: ["fractions", "square roots", "exponents"],
+  },
+  {
+    id: "probability.basic",
+    title: "Basic probability",
+    prerequisites: ["algebra.fractions"],
+    keywords: ["probability", "equally likely outcomes"],
+  },
+  {
+    id: "stats.mean",
+    title: "Mean & deviations",
+    prerequisites: ["algebra.equations"],
+    keywords: ["mean", "balance point", "deviations"],
+  },
+  {
+    id: "stats.variance",
+    title: "Variance & standard deviation",
+    prerequisites: ["stats.mean", "algebra.fractions"],
+    keywords: ["squared deviations", "sample variance", "degrees of freedom"],
+  },
+  {
+    id: "stats.z-scores",
+    title: "Standardization & transformations",
+    prerequisites: ["stats.variance"],
+    keywords: ["z-score", "units", "linear transformations"],
+  },
+  {
+    id: "probability.conditional",
+    title: "Conditional probability",
+    prerequisites: ["probability.basic"],
+    keywords: ["conditional probability", "Bayes"],
+  },
+  {
+    id: "stats.sampling",
+    title: "Sampling & standard error",
+    prerequisites: ["stats.variance", "probability.conditional"],
+    keywords: ["sampling", "standard error", "CLT"],
+  },
+  {
+    id: "stats.inference",
+    title: "Statistical inference",
+    prerequisites: ["stats.sampling"],
+    keywords: ["confidence intervals", "hypothesis tests"],
+  },
+];
+export const weeks = [
+  "Data, variation & standardization",
+  "Probability & Bayes’ rule",
+  "Random variables & distributions",
+  "Sampling distributions & the CLT",
+  "Estimation & confidence intervals",
+  "Hypothesis tests, errors & power",
+  "Correlation & least-squares regression",
+  "Experimental design & synthesis",
+];
+export const lessons: Lesson[] = [
+  {
+    id: "mean",
+    title: "The mean is a balance point",
+    minutes: 35,
+    concepts: ["stats.mean"],
+    sections: [
+      {
+        title: "Start with a question",
+        text: "Four study sessions lasted 2, 4, 4, and 6 hours. We want one number describing their center, but we also want to know what that number hides. The mean shares the total equally among observations. For n observations, the subscript i labels each value; the summation sign means “add these terms.”",
+        math: "\\bar{x}=\\frac{1}{n}\\sum_{i=1}^n x_i",
+        example:
+          "Here n = 4 and the total is 16 hours, so the mean is 4 hours. The datasets {4,4,4,4} and {2,4,4,6} share this mean, despite different variation.",
+      },
+      {
+        title: "Deviations carry direction",
+        text: "A deviation is an observation minus the mean. Negative deviations lie below the center; positive deviations lie above it. Our four deviations are −2, 0, 0, and 2 hours. Their sum is zero. This happens for every dataset, not just symmetric ones.",
+        math: "\\sum_{i=1}^{n}(x_i-\\bar{x})=\\sum_{i=1}^{n}x_i-n\\bar{x}=n\\bar{x}-n\\bar{x}=0",
+        example:
+          "For {1,2,9}, the mean is 4. Deviations −3, −2, and 5 still sum to zero. A mean need not be an observed value.",
+      },
+      {
+        title: "What does the mean minimize?",
+        text: "Suppose you choose another center c. Write each deviation from c as a deviation from the mean plus the displacement of the mean from c. Expand the squares. The cross term vanishes because deviations from the mean sum to zero. The remaining term is nonnegative, and is zero exactly when c equals the mean.",
+        math: "\\sum_i(x_i-c)^2=\\sum_i(x_i-\\bar{x})^2+n(\\bar{x}-c)^2",
+        example:
+          "For {2,4,4,6}, squared distances from 4 sum to 8. From 5 they sum to 12 = 8 + 4(4−5)². The mean uniquely minimizes the sum of squared distances.",
+      },
+      {
+        title: "Use the center with judgment",
+        text: "The mean is sensitive to extreme observations because each observation contributes to the total. The median is the middle ordered value (or mean of the two middle values) and can better describe a typical observation in a strongly skewed dataset. Neither is universally superior: match the summary to the question.",
+        example:
+          "For incomes {30,32,33,35,200}, the mean is 66 and median 33. The mean is useful for the total divided across people, but it does not describe a typical income well.",
+      },
+    ],
+  },
+  {
+    id: "variance",
+    title: "Make variation measurable",
+    minutes: 45,
+    concepts: ["stats.mean", "stats.variance"],
+    sections: [
+      {
+        title: "Why square the deviations?",
+        text: "Averaging signed deviations always gives zero. Squaring removes cancellation, gives larger deviations more weight, and leads to useful algebra. Absolute deviations also measure spread, but have different mathematical properties. Variance uses squared deviations; it is not the only possible measure of spread.",
+        math: "\\sigma^2=\\frac{1}{N}\\sum_{i=1}^N(x_i-\\mu)^2",
+        example:
+          "If {2,4,4,6} is the entire population of interest, squared deviations are 4,0,0,4. Population variance is 8/4 = 2 hours².",
+      },
+      {
+        title: "Return to the original units",
+        text: "Standard deviation is the nonnegative square root of variance. If measurements are in hours, variance is in hours squared and standard deviation is in hours. Standard deviation is a scale of variation around the mean, not the literal average absolute distance.",
+        math: "\\sigma=\\sqrt{\\sigma^2}",
+        example:
+          "The population standard deviation of {2,4,4,6} is √2 ≈ 1.414 hours. Do not report 2 hours as the standard deviation.",
+      },
+      {
+        title: "A sample estimates a larger population",
+        text: "When independent, identically distributed observations sample a population with finite variance, the sample mean is fitted to the same data. That fit makes deviations smaller on average than deviations from the true population mean. Dividing the squared deviations by n−1 corrects this downward bias in the variance estimate. It does not make the standard deviation itself unbiased.",
+        math: "s^2=\\frac{1}{n-1}\\sum_{i=1}^n(x_i-\\bar{x})^2,\\qquad n>1",
+        example:
+          "If {2,4,4,6} is a sample used to estimate a broader population, s² = 8/3 and s ≈ 1.633. The data did not change; the purpose of the calculation did.",
+      },
+      {
+        title: "Why n−1 appears",
+        text: "Because the deviations sum to zero, once n−1 of them are chosen, the last is determined. This explains the degrees of freedom. A stronger justification uses expectation: the sample mean has variance σ²/n, so fitting the mean removes one σ² of expected squared deviation. We will derive that variance-of-the-mean result in the sampling unit.",
+        math: "\\sum_i(X_i-\\bar{X})^2=\\sum_i(X_i-\\mu)^2-n(\\bar{X}-\\mu)^2",
+        example:
+          "Taking expectations gives nσ² − n(σ²/n) = (n−1)σ². Therefore E[s²] = σ². Independence, a common distribution, and finite variance matter.",
+      },
+    ],
+  },
+  {
+    id: "standardization",
+    title: "Change the scale, keep the structure",
+    minutes: 40,
+    concepts: ["stats.z-scores", "stats.variance"],
+    sections: [
+      {
+        title: "Shifting and rescaling",
+        text: "Add a to every observation and multiply by b. The mean moves with the observations. Subtracting the new mean cancels the shift, leaving each deviation multiplied by b. Squaring multiplies variance by b²; taking the square root multiplies standard deviation by |b|.",
+        math: "\\bar{y}=a+b\\bar{x},\\qquad s_y^2=b^2s_x^2,\\qquad s_y=|b|s_x",
+        example:
+          "If Celsius temperatures have mean 20 and SD 3, Fahrenheit values Y = 32 + 1.8X have mean 68 and SD 5.4. Adding 32 contributes no variation.",
+      },
+      {
+        title: "Measure position in standard deviations",
+        text: "A z-score says how far an observation lies from its reference mean, measured in reference standard deviations. It has no units. Positive means above the mean; negative means below. Standardization requires positive standard deviation.",
+        math: "z=\\frac{x-\\mu}{\\sigma}",
+        example:
+          "A score of 85 in a population with mean 70 and SD 10 has z = 1.5. A score of 65 has z = −0.5.",
+      },
+      {
+        title: "A z-score is not a percentile",
+        text: "Standardizing a distribution changes its center and scale, not its shape. A skewed distribution stays skewed. A z-score alone cannot tell you the percentage below an observation; that requires distributional information. Rules based on a normal curve apply only when a normal model is appropriate.",
+        example:
+          "A value with z = 2 is two standard deviations above the mean. It is not automatically the 97.7th percentile. That percentile follows from a normal model, not from standardization itself.",
+      },
+      {
+        title: "Connect the ideas",
+        text: "Reconstruct the chain: the mean balances deviations; squared deviations quantify spread; standard deviation restores measurement units; standardization removes those units. Before a quiz, explain each link aloud, then work one example without notes.",
+        example:
+          "For the population {2,4,4,6}: μ = 4, σ² = 2, σ = √2. Standardized values are {−√2,0,0,√2}. They have population mean 0 and variance 1.",
+      },
+    ],
+  },
+];
+const num = (
+  id: string,
+  prompt: string,
+  answer: number,
+  concept: string,
+  solution: string,
+  extra: Partial<Question> = {},
+): Question => ({
+  id,
+  prompt,
+  answer,
+  concept,
+  solution,
+  kind: "number",
+  category: "calculation",
+  hint: "Write the definition first. Check the units and denominator before calculating.",
+  tolerance: 0.01,
+  ...extra,
+});
+const choice = (
+  id: string,
+  prompt: string,
+  options: string[],
+  answer: string,
+  concept: string,
+  solution: string,
+  extra: Partial<Question> = {},
+): Question => ({
+  id,
+  prompt,
+  options,
+  answer,
+  concept,
+  solution,
+  kind: "choice",
+  category: "interpretation",
+  hint: "Consider what the definition guarantees, and what requires additional assumptions.",
+  ...extra,
+});
+const written = (
+  id: string,
+  prompt: string,
+  concept: string,
+  solution: string,
+  rubric: string[],
+): Question => ({
+  id,
+  prompt,
+  concept,
+  solution,
+  rubric,
+  kind: "written",
+  category: "reasoning",
+  hint: "State the definitions, show each algebraic step, and explain the conclusion in words.",
+});
+export const activities: Activity[] = [
+  {
+    id: "diagnostic",
+    title: "Find your starting point",
+    description:
+      "8 questions · About 15 minutes · Ungraded prerequisite check. Your responses inform your learning record, but there is no passing score.",
+    kind: "diagnostic",
+    questions: [
+      num(
+        "d1",
+        "Solve 3x + 7 = 22. What is x?",
+        5,
+        "algebra.equations",
+        "Subtract 7 to get 3x = 15, then divide by 3: x = 5.",
+      ),
+      num(
+        "d2",
+        "Evaluate 1/2 + 1/3. Enter a decimal or fraction.",
+        5 / 6,
+        "algebra.fractions",
+        "Use denominator 6: 3/6 + 2/6 = 5/6.",
+        { tolerance: 0.001 },
+      ),
+      num("d3", "Evaluate √49.", 7, "algebra.fractions", "The nonnegative square root of 49 is 7."),
+      num(
+        "d4",
+        "If f(x) = 2x² − 1, find f(3).",
+        17,
+        "algebra.equations",
+        "2(3²) − 1 = 18 − 1 = 17.",
+      ),
+      num(
+        "d5",
+        "A fair six-sided die is rolled. What is the probability of a result greater than 4?",
+        1 / 3,
+        "probability.basic",
+        "Two of six equally likely outcomes, 5 and 6, qualify: 2/6 = 1/3.",
+        { tolerance: 0.001 },
+      ),
+      num(
+        "d6",
+        "If n changes from 4 to 16, what is the new value of 1/√n?",
+        0.25,
+        "algebra.fractions",
+        "1/√16 = 1/4 = 0.25.",
+      ),
+      num(
+        "d7",
+        "For x₁ = 2, x₂ = 5, x₃ = 8, evaluate Σᵢ₌₁³ xᵢ.",
+        15,
+        "algebra.equations",
+        "The notation means 2 + 5 + 8 = 15.",
+      ),
+      choice(
+        "d8",
+        "A fair coin has landed heads three times. Assuming independent tosses, what is P(heads next)?",
+        ["0", "1/4", "1/2", "1"],
+        "1/2",
+        "probability.basic",
+        "Independence means previous results do not change the next toss probability.",
+        { misconceptions: { "1/4": "gambler-fallacy", "0": "gambler-fallacy" } },
+      ),
+    ],
+  },
+  {
+    id: "worksheet-1",
+    title: "Week 1 · Core worksheet",
+    description:
+      "18 problems · Work with notes · Numeric answers accept decimals or simple fractions. Written answers use a rubric after submission.",
+    kind: "worksheet",
+    questions: [
+      num("w1", "Find the mean of {2,4,4,6}.", 4, "stats.mean", "(2 + 4 + 4 + 6)/4 = 4."),
+      num("w2", "Find the mean of {1,2,9}.", 4, "stats.mean", "12/3 = 4."),
+      num(
+        "w3",
+        "For {1,2,9}, what is the deviation of 9 from the mean?",
+        5,
+        "stats.mean",
+        "9 − 4 = 5.",
+      ),
+      num(
+        "w4",
+        "What is the sum of deviations from the mean for any finite nonempty dataset?",
+        0,
+        "stats.mean",
+        "Σ(xᵢ − x̄) = Σxᵢ − nx̄ = 0.",
+      ),
+      num(
+        "w5",
+        "For {2,4,4,6}, find the sum of squared deviations from the mean.",
+        8,
+        "stats.variance",
+        "(−2)² + 0² + 0² + 2² = 8.",
+      ),
+      num(
+        "w6",
+        "Treat {2,4,4,6} as the whole population. Find its variance.",
+        2,
+        "stats.variance",
+        "Divide the sum 8 by population size 4: 2.",
+      ),
+      num(
+        "w7",
+        "Treat {2,4,4,6} as a sample. Find its sample variance.",
+        8 / 3,
+        "stats.variance",
+        "Divide 8 by n−1 = 3: 8/3.",
+        { misconceptions: { "2": "sample-population-confusion" } },
+      ),
+      num(
+        "w8",
+        "Find the population standard deviation of {2,4,4,6}, to three decimals.",
+        Math.sqrt(2),
+        "stats.variance",
+        "The square root of population variance 2 is about 1.414.",
+        { misconceptions: { "2": "variance-sd-confusion" } },
+      ),
+      choice(
+        "w9",
+        "Measurements are in meters. In what units is variance measured?",
+        ["meters", "square meters", "no units"],
+        "square meters",
+        "stats.variance",
+        "Squaring deviations squares the units.",
+        { misconceptions: { meters: "variance-sd-confusion" } },
+      ),
+      num(
+        "w10",
+        "Every observation increases by 10. The original variance is 7. What is the new variance?",
+        7,
+        "stats.z-scores",
+        "Shifting every observation does not change deviations.",
+      ),
+      num(
+        "w11",
+        "Y = −3X + 2 and X has SD 4. Find the SD of Y.",
+        12,
+        "stats.z-scores",
+        "SD scales by |−3|: 3 × 4 = 12.",
+        { misconceptions: { "-12": "negative-standard-deviation" } },
+      ),
+      num(
+        "w12",
+        "Y = 5 + 2X and X has mean 8. Find the mean of Y.",
+        21,
+        "stats.z-scores",
+        "5 + 2(8) = 21.",
+      ),
+      num(
+        "w13",
+        "Find the z-score of 85 when the reference mean is 70 and SD is 10.",
+        1.5,
+        "stats.z-scores",
+        "(85 − 70)/10 = 1.5.",
+      ),
+      num(
+        "w14",
+        "An observation has z = −2, reference mean 100, and SD 15. Find the observation.",
+        70,
+        "stats.z-scores",
+        "x = μ + zσ = 100 − 30 = 70.",
+      ),
+      choice(
+        "w15",
+        "Does standardizing a skewed distribution make it normal?",
+        ["Yes", "No"],
+        "No",
+        "stats.z-scores",
+        "A linear rescaling preserves distribution shape.",
+        { misconceptions: { Yes: "standardization-implies-normality" } },
+      ),
+      written(
+        "w16",
+        "Explain why signed deviations cannot measure spread by their ordinary average. Give an example.",
+        "stats.mean",
+        "Deviations from the mean sum to zero, so their average is zero even for a spread-out dataset. For {1,3}, deviations −1 and 1 cancel.",
+        [
+          "State that deviations from the mean sum to zero.",
+          "Give a nonconstant dataset with cancelling deviations.",
+          "Explain why zero average deviation hides spread.",
+        ],
+      ),
+      written(
+        "w17",
+        "Explain why sample variance uses n−1 rather than n when estimating population variance under independent identical sampling.",
+        "stats.variance",
+        "Fitting the mean makes the squared deviations too small on average. Their expectation is (n−1)σ², so dividing by n−1 yields an unbiased estimate.",
+        [
+          "Identify that the mean is estimated from the same sample.",
+          "Explain loss of one degree of freedom or downward bias.",
+          "Connect division by n−1 to unbiased estimation under the stated assumptions.",
+        ],
+      ),
+      choice(
+        "w18",
+        "A salary dataset has one exceptionally large value. Which best describes a typical salary without being pulled strongly by that value?",
+        ["Mean", "Median", "Variance"],
+        "Median",
+        "stats.mean",
+        "The median depends on rank and is less sensitive to a single extreme value.",
+        { category: "judgment" },
+      ),
+    ],
+  },
+  {
+    id: "challenge-1",
+    title: "Week 1 · Derivations",
+    description:
+      "4 written problems · Allow 30–45 minutes · Show each step before consulting the model solution.",
+    kind: "challenge",
+    questions: [
+      written(
+        "c1",
+        "Prove Σᵢ(xᵢ − x̄) = 0 for n observations.",
+        "stats.mean",
+        "Σ(xᵢ − x̄) = Σxᵢ − nx̄. By definition x̄ = Σxᵢ/n, so the expression is zero.",
+        ["Distribute the sum correctly.", "Use the definition of x̄.", "Conclude exactly zero."],
+      ),
+      written(
+        "c2",
+        "Prove Σᵢ(xᵢ − c)² = Σᵢ(xᵢ − x̄)² + n(x̄ − c)². Explain why the mean minimizes squared distance.",
+        "stats.mean",
+        "Write xᵢ−c = (xᵢ−x̄)+(x̄−c), expand squares, and sum. The cross term is 2(x̄−c)Σ(xᵢ−x̄)=0. The remaining n(x̄−c)² is nonnegative, with equality only at c=x̄.",
+        [
+          "Decompose each deviation.",
+          "Expand and eliminate the cross term.",
+          "Use nonnegativity to identify the unique minimizer.",
+        ],
+      ),
+      written(
+        "c3",
+        "For yᵢ = a + bxᵢ, prove sᵧ² = b²sₓ² and sᵧ = |b|sₓ.",
+        "stats.z-scores",
+        "First ȳ=a+bx̄. Then yᵢ−ȳ=b(xᵢ−x̄). Square, sum, and divide by n−1. Taking nonnegative square roots gives |b|sₓ.",
+        [
+          "Derive the transformed mean.",
+          "Show transformed deviations and variance.",
+          "Explain the absolute value in standard deviation.",
+        ],
+      ),
+      written(
+        "c4",
+        "For a dataset with positive population SD, prove the standardized values have population mean 0 and variance 1.",
+        "stats.z-scores",
+        "The standardized mean is Σ(xᵢ−μ)/(Nσ)=0. The variance is Σ((xᵢ−μ)/σ)²/N = σ²/σ²=1.",
+        [
+          "Use positive σ to justify division.",
+          "Show the standardized mean is zero.",
+          "Show the population variance is one.",
+        ],
+      ),
+    ],
+  },
+  {
+    id: "quiz-1",
+    title: "Week 1 · Check your understanding",
+    description:
+      "8 questions · Suggested time: 20 minutes · Close your notes. No hints. Each question is equally weighted; written reasoning is self-assessed.",
+    kind: "quiz",
+    questions: [
+      num("q1", "Find the mean of {3,5,7,9}.", 6, "stats.mean", "24/4 = 6."),
+      num(
+        "q2",
+        "Treat {3,5,7,9} as a sample. Find the sample variance.",
+        20 / 3,
+        "stats.variance",
+        "Deviations −3,−1,1,3 square to 9,1,1,9; sum 20. Divide by 3.",
+        { misconceptions: { "5": "sample-population-confusion" } },
+      ),
+      num(
+        "q3",
+        "A population has variance 25. Find its standard deviation.",
+        5,
+        "stats.variance",
+        "√25 = 5.",
+        { misconceptions: { "25": "variance-sd-confusion" } },
+      ),
+      num(
+        "q4",
+        "Y = 7 − 2X and X has variance 9. Find the variance of Y.",
+        36,
+        "stats.z-scores",
+        "(−2)² × 9 = 36.",
+      ),
+      num(
+        "q5",
+        "Find the z-score of 42 when the reference mean is 50 and SD is 4.",
+        -2,
+        "stats.z-scores",
+        "(42 − 50)/4 = −2.",
+      ),
+      choice(
+        "q6",
+        "Without a distributional assumption, z = 2 tells you that an observation is…",
+        [
+          "At the 97.7th percentile",
+          "Two SDs above the reference mean",
+          "Twice the reference mean",
+        ],
+        "Two SDs above the reference mean",
+        "stats.z-scores",
+        "Only the standardized distance is guaranteed.",
+        { misconceptions: { "At the 97.7th percentile": "standardization-implies-normality" } },
+      ),
+      written(
+        "q7",
+        "A friend averages signed deviations from the mean and gets zero. They conclude there is no variation. Explain the error.",
+        "stats.mean",
+        "Signed deviations always cancel around the mean, even for variable data. Use squared or absolute deviations to avoid cancellation.",
+        [
+          "Explain cancellation around the mean.",
+          "Distinguish zero signed average from zero variation.",
+          "Propose a valid spread measure.",
+        ],
+      ),
+      written(
+        "q8",
+        "When would you divide squared deviations by N, and when by n−1? Explain the distinction.",
+        "stats.variance",
+        "Use N to describe the variance of the entire population of interest. Use n−1 for sample variance estimating a population variance under independent identical sampling; fitting the mean costs one degree of freedom.",
+        [
+          "Distinguish population description from estimation.",
+          "Assign each denominator correctly.",
+          "Explain fitting the mean or unbiasedness.",
+        ],
+      ),
+    ],
+  },
+  {
+    id: "review-1",
+    title: "Week 1 · Rebuild and retrieve",
+    description:
+      "6 fresh questions · Revisit weak concepts, or retrieve the ideas after a few days.",
+    kind: "review",
+    questions: [
+      num("r1", "Find the mean of {2,6,10}.", 6, "stats.mean", "18/3 = 6."),
+      num(
+        "r2",
+        "Find the sample variance of {2,6,10}.",
+        16,
+        "stats.variance",
+        "Squared deviations 16+0+16=32; divide by 2.",
+        { misconceptions: { "10.666666666666666": "sample-population-confusion" } },
+      ),
+      num(
+        "r3",
+        "A population has SD 6. Every value is multiplied by −2. Find the new SD.",
+        12,
+        "stats.z-scores",
+        "|−2| × 6 = 12.",
+      ),
+      num("r4", "Find z when x = 18, μ = 12, and σ = 3.", 2, "stats.z-scores", "(18−12)/3 = 2."),
+      choice(
+        "r5",
+        "All values in a population equal 5. Can you compute ordinary z-scores?",
+        ["Yes, they all equal 0", "No, SD is zero"],
+        "No, SD is zero",
+        "stats.z-scores",
+        "Standardization would divide by zero; z-scores are undefined.",
+      ),
+      written(
+        "r6",
+        "Explain why adding a constant changes the mean but leaves variance unchanged.",
+        "stats.z-scores",
+        "The mean shifts by the same constant. Subtracting the new mean cancels the shift in every deviation, leaving squared deviations and variance unchanged.",
+        [
+          "State how the mean shifts.",
+          "Show cancellation in deviations.",
+          "Conclude unchanged variance.",
+        ],
+      ),
+    ],
+  },
+];

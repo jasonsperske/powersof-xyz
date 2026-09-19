@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "powersof external assessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "version",
+    "assessedConcepts"
+  ],
+  "properties": {
+    "format": {
+      "const": "powersof-assessment"
+    },
+    "version": {
+      "const": "1.0"
+    },
+    "assessedConcepts": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "concept",
+          "result",
+          "confidence",
+          "evidence",
+          "misconceptions"
+        ],
+        "properties": {
+          "concept": {
+            "enum": [
+              "algebra.equations",
+              "algebra.fractions",
+              "probability.basic",
+              "stats.mean",
+              "stats.variance",
+              "stats.z-scores",
+              "probability.conditional",
+              "stats.sampling",
+              "stats.inference",
+              "algebra.signed-numbers",
+              "algebra.ratios",
+              "algebra.expressions",
+              "algebra.inequalities",
+              "algebra.functions"
+            ]
+          },
+          "result": {
+            "enum": [
+              "developing",
+              "mastered",
+              "needs-work"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "maxLength": 30000
+            }
+          },
+          "misconceptions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 30000
+            }
+          }
+        }
+      }
+    }
+  }
+}
