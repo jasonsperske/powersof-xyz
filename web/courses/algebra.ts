@@ -117,6 +117,7 @@ export const algebraLessons: Lesson[] = [
     sections: [
       {
         title: 'An exponent counts factors',
+        animation: 'exponent-factors',
         text: 'For a positive integer n, aⁿ means n factors of a multiplied together. It does not mean a times n. When multiplying powers with the same base, combine their lists of factors. When raising a power to a power, repeat the whole list.',
         math: String.raw`a^m a^n=a^{m+n},\qquad (a^m)^n=a^{mn}`,
         example:
@@ -124,6 +125,7 @@ export const algebraLessons: Lesson[] = [
       },
       {
         title: 'Zero and negative exponents',
+        animation: 'exponent-ladder',
         text: 'For a nonzero base, reducing the exponent by one divides the value by the base. This gives a⁰ = 1 and a negative exponent as a reciprocal. A negative exponent does not mean a negative answer.',
         math: String.raw`a^0=1,\qquad a^{-n}=\frac{1}{a^n}\quad(a\ne0)`,
         example:
@@ -207,6 +209,7 @@ export const algebraLessons: Lesson[] = [
     sections: [
       {
         title: 'Solutions make a statement true',
+        animation: 'equation-balance',
         text: 'Solving an equation means finding every allowed value that makes the equality true. Adding the same quantity to both sides or multiplying both sides by a nonzero number gives an equivalent equation. Do not divide by an expression that could be zero without considering that case.',
         math: String.raw`3x+7=22\Longleftrightarrow3x=15\Longleftrightarrow x=5`,
         example:
@@ -249,6 +252,7 @@ export const algebraLessons: Lesson[] = [
       },
       {
         title: 'Negative scaling reverses order',
+        animation: 'inequality-flip',
         text: 'Adding the same quantity preserves order. Multiplying or dividing by a positive number also preserves it. Multiplying or dividing by a negative number reverses order because it reflects the number line.',
         math: String.raw`-2x<6\Longleftrightarrow x>-3`,
         example:
@@ -278,6 +282,7 @@ export const algebraLessons: Lesson[] = [
       },
       {
         title: 'Slope measures change per input unit',
+        animation: 'slope',
         text: 'A linear function y = mx + b has constant slope m. Compute slope as the change in output divided by the corresponding nonzero change in input. Use the same point order in numerator and denominator. The intercept b is the output when x = 0.',
         math: String.raw`m=\frac{y_2-y_1}{x_2-x_1}\quad(x_2\ne x_1)`,
         example:

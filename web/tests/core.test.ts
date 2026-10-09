@@ -27,6 +27,7 @@ import {
 } from '../src/engine';
 import { loadRecord, saveRecord } from '../src/db';
 import type { Attempt } from '../src/types';
+import { animationIds } from '../src/animations/registry';
 const q = (id: string) =>
   activities.flatMap((a) => a.questions).find((q) => q.id === id)!;
 function attempt(
@@ -409,4 +410,11 @@ test('All lesson mathematics renders and prerequisites form an acyclic graph', (
       visit(prereq, next);
   };
   concepts.forEach((c) => visit(c.id, new Set()));
+});
+test('lesson animations reference registered animations, each used once', () => {
+  const used = lessons.flatMap((l) =>
+    l.sections.flatMap((s) => (s.animation ? [s.animation] : [])),
+  );
+  for (const id of used) assert.ok(animationIds.includes(id), id);
+  assert.deepEqual([...used].sort(), [...animationIds].sort());
 });

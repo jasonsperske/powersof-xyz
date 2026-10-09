@@ -340,12 +340,14 @@
         },
         {
           "title": "Signed deviations from the mean",
+          "animation": "mean-balance",
           "text": "A deviation is an observation minus the mean. Negative deviations lie below the center; positive deviations lie above it. Our four deviations are −2, 0, 0, and 2 hours. Their sum is zero. This happens for every dataset, not just symmetric ones.",
           "math": "\\sum_{i=1}^{n}(x_i-\\bar{x})=\\sum_{i=1}^{n}x_i-n\\bar{x}=n\\bar{x}-n\\bar{x}=0",
           "example": "For {1,2,9}, the mean is 4. Deviations −3, −2, and 5 still sum to zero. A mean need not be an observed value."
         },
         {
           "title": "What does the mean minimize?",
+          "animation": "mean-minimizes",
           "text": "Suppose you choose another center c. Write each deviation from c as a deviation from the mean plus the displacement of the mean from c. Expand the squares. The cross term vanishes because deviations from the mean sum to zero. The remaining term is nonnegative, and is zero exactly when c equals the mean.",
           "math": "\\sum_i(x_i-c)^2=\\sum_i(x_i-\\bar{x})^2+n(\\bar{x}-c)^2",
           "example": "For {2,4,4,6}, squared distances from 4 sum to 8. From 5 they sum to 12 = 8 + 4(4−5)². The mean uniquely minimizes the sum of squared distances."
@@ -379,6 +381,7 @@
         },
         {
           "title": "Standard deviation and measurement units",
+          "animation": "variance-squares",
           "text": "Standard deviation is the nonnegative square root of variance. If measurements are in hours, variance is in hours squared and standard deviation is in hours. Standard deviation is a scale of variation around the mean, not the literal average absolute distance.",
           "math": "\\sigma=\\sqrt{\\sigma^2}",
           "example": "The population standard deviation of {2,4,4,6} is √2 ≈ 1.414 hours. Do not report 2 hours as the standard deviation."
@@ -419,6 +422,7 @@
         },
         {
           "title": "Measure position in standard deviations",
+          "animation": "z-score",
           "text": "A z-score says how far an observation lies from its reference mean, measured in reference standard deviations. It has no units. Positive means above the mean; negative means below. Standardization requires positive standard deviation.",
           "math": "z=\\frac{x-\\mu}{\\sigma}",
           "example": "A score of 85 in a population with mean 70 and SD 10 has z = 1.5. A score of 65 has z = −0.5."
@@ -522,12 +526,14 @@
       "sections": [
         {
           "title": "An exponent counts factors",
+          "animation": "exponent-factors",
           "text": "For a positive integer n, aⁿ means n factors of a multiplied together. It does not mean a times n. When multiplying powers with the same base, combine their lists of factors. When raising a power to a power, repeat the whole list.",
           "math": "a^m a^n=a^{m+n},\\qquad (a^m)^n=a^{mn}",
           "example": "2³ · 2² = (2·2·2)(2·2) = 2⁵ = 32. By contrast, 2³ + 2² = 8 + 4 = 12; the product rule does not apply to addition."
         },
         {
           "title": "Zero and negative exponents",
+          "animation": "exponent-ladder",
           "text": "For a nonzero base, reducing the exponent by one divides the value by the base. This gives a⁰ = 1 and a negative exponent as a reciprocal. A negative exponent does not mean a negative answer.",
           "math": "a^0=1,\\qquad a^{-n}=\\frac{1}{a^n}\\quad(a\\ne0)",
           "example": "10² = 100, 10¹ = 10, 10⁰ = 1, and 10⁻² = 0.01. Scientific notation 3.2 × 10⁴ means 32,000. We do not apply these reciprocal rules to a base of zero."
@@ -624,6 +630,7 @@
       "sections": [
         {
           "title": "Solutions make a statement true",
+          "animation": "equation-balance",
           "text": "Solving an equation means finding every allowed value that makes the equality true. Adding the same quantity to both sides or multiplying both sides by a nonzero number gives an equivalent equation. Do not divide by an expression that could be zero without considering that case.",
           "math": "3x+7=22\\Longleftrightarrow3x=15\\Longleftrightarrow x=5",
           "example": "Check by substitution: 3(5) + 7 = 22. “Move 7 and change its sign” is shorthand for subtracting 7 from both sides; the balanced operation is the reason it works."
@@ -668,6 +675,7 @@
         },
         {
           "title": "Negative scaling reverses order",
+          "animation": "inequality-flip",
           "text": "Adding the same quantity preserves order. Multiplying or dividing by a positive number also preserves it. Multiplying or dividing by a negative number reverses order because it reflects the number line.",
           "math": "-2x<6\\Longleftrightarrow x>-3",
           "example": "Since 2 < 5, multiplying by −1 gives −2 > −5. For −2x < 6, test x=0: 0<6 is true. It belongs to x>−3, not x<−3."
@@ -702,6 +710,7 @@
         },
         {
           "title": "Slope measures change per input unit",
+          "animation": "slope",
           "text": "A linear function y = mx + b has constant slope m. Compute slope as the change in output divided by the corresponding nonzero change in input. Use the same point order in numerator and denominator. The intercept b is the output when x = 0.",
           "math": "m=\\frac{y_2-y_1}{x_2-x_1}\\quad(x_2\\ne x_1)",
           "example": "Through (2,7) and (5,13), m = (13−7)/(5−2) = 2. Substitute a point into y=2x+b: 7=4+b, so b=3. The rule is y=2x+3. A vertical line has zero input change, so its slope is undefined and it is not a function y of x."
