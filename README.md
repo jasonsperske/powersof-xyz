@@ -12,6 +12,7 @@ Statistics Week 1 and platform features:
 
 - Eight-question prerequisite diagnostic.
 - Three teaching guides with KaTeX equations, worked examples, and saved notes.
+- Nine animated explanations (SVG + Motion) embedded in teaching guides: mean as equal sharing, what the mean minimizes, variance to standard deviation, z-scores, exponent rules, zero/negative exponents, balancing equations, inequality flips, and slope/intercept. Each is pausable and steppable (play/pause, previous/next, jump-to-step timeline, ←/→/Home/End keys) and respects reduced-motion settings.
 - Eighteen core problems, four derivations, eight quiz questions, and six fresh review problems.
 - Numeric/fraction and multiple-choice grading; explicit rubric self-assessment for written reasoning.
 - Per-question attempts, conceptual categories, answer-pattern misconception tags, and a transparent mastery heuristic.

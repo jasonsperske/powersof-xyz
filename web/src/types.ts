@@ -1,3 +1,4 @@
+import type { AnimationId } from './animations/registry';
 export type Category = "calculation" | "reasoning" | "interpretation" | "judgment";
 export type Question = {
   id: string;
@@ -26,7 +27,13 @@ export type Lesson = {
   title: string;
   minutes: number;
   concepts: string[];
-  sections: { title: string; text: string; math?: string; example?: string }[];
+  sections: {
+    title: string;
+    text: string;
+    math?: string;
+    example?: string;
+    animation?: AnimationId;
+  }[];
 };
 export type Attempt = {
   id: string;

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -14,6 +14,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import Home from './Home';
+const ConceptAnimation = lazy(() => import('./animations'));
 import {
   activities,
   concepts,
@@ -292,6 +293,11 @@ function LessonPage({
               <h2>{s.title}</h2>
               <p>{s.text}</p>
               {s.math && math(s.math)}
+              {s.animation && (
+                <Suspense fallback={<div className="anim anim-loading" />}>
+                  <ConceptAnimation id={s.animation} />
+                </Suspense>
+              )}
               {s.example && (
                 <div className="example">
                   <p className="eyebrow">WORKED EXAMPLE</p>

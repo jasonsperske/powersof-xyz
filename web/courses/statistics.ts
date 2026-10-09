@@ -86,6 +86,7 @@ export const lessons: Lesson[] = [
       },
       {
         title: "Signed deviations from the mean",
+        animation: "mean-balance",
         text: "A deviation is an observation minus the mean. Negative deviations lie below the center; positive deviations lie above it. Our four deviations are −2, 0, 0, and 2 hours. Their sum is zero. This happens for every dataset, not just symmetric ones.",
         math: "\\sum_{i=1}^{n}(x_i-\\bar{x})=\\sum_{i=1}^{n}x_i-n\\bar{x}=n\\bar{x}-n\\bar{x}=0",
         example:
@@ -93,6 +94,7 @@ export const lessons: Lesson[] = [
       },
       {
         title: "What does the mean minimize?",
+        animation: "mean-minimizes",
         text: "Suppose you choose another center c. Write each deviation from c as a deviation from the mean plus the displacement of the mean from c. Expand the squares. The cross term vanishes because deviations from the mean sum to zero. The remaining term is nonnegative, and is zero exactly when c equals the mean.",
         math: "\\sum_i(x_i-c)^2=\\sum_i(x_i-\\bar{x})^2+n(\\bar{x}-c)^2",
         example:
@@ -126,6 +128,7 @@ export const lessons: Lesson[] = [
       },
       {
         title: "Standard deviation and measurement units",
+        animation: "variance-squares",
         text: "Standard deviation is the nonnegative square root of variance. If measurements are in hours, variance is in hours squared and standard deviation is in hours. Standard deviation is a scale of variation around the mean, not the literal average absolute distance.",
         math: "\\sigma=\\sqrt{\\sigma^2}",
         example:
@@ -167,6 +170,7 @@ export const lessons: Lesson[] = [
       },
       {
         title: "Measure position in standard deviations",
+        animation: "z-score",
         text: "A z-score says how far an observation lies from its reference mean, measured in reference standard deviations. It has no units. Positive means above the mean; negative means below. Standardization requires positive standard deviation.",
         math: "z=\\frac{x-\\mu}{\\sigma}",
         example:
